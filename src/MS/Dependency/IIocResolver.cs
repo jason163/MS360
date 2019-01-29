@@ -26,6 +26,8 @@ namespace MS.Dependency
         /// <returns>对象实例</returns>
         T Resolve<T>(Type type);
 
+        object Resolve(Type type);
+
         /// <summary>
         /// 获取对象实例从IOC container.
         /// Returning object must be Released (see <see cref="Release"/>) after usage.
