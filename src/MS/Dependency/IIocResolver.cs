@@ -38,6 +38,13 @@ namespace MS.Dependency
         T Resolve<T>(object argumentsAsAnonymousType);
 
         /// <summary>
+        /// 获取注册类型所有实现实例
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        T[] ResolveAll<T>();
+
+        /// <summary>
         /// 释放上一次解析对象
         /// </summary>
         /// <param name="obj">需要被释放的对象</param>

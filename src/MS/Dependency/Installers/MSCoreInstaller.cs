@@ -11,7 +11,7 @@ namespace MS.Dependency.Installers
     /// <summary>
     /// MS Library Core 依赖注册
     /// </summary>
-    internal class MSCoreInterface : IWindsorInstaller
+    internal class MSCoreInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {

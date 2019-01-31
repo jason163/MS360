@@ -43,6 +43,10 @@ namespace MS.Dependency
         {
             Instance = new IocManager();
         }
+
+        /// <summary>
+        /// 一般不用直接调用，主要用于单元测试
+        /// </summary>
         public IocManager()
         {
             IocContainer = CreateContainer();
@@ -184,6 +188,11 @@ namespace MS.Dependency
         public T Resolve<T>(object argumentsAsAnonymousType)
         {
             return IocContainer.Resolve<T>(argumentsAsAnonymousType);
+        }
+
+        public T[] ResolveAll<T>()
+        {
+            return IocContainer.ResolveAll<T>();
         }
 
         public void Release(object obj)

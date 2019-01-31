@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace MS.Dependency
@@ -13,6 +14,13 @@ namespace MS.Dependency
         /// 为常规(协议)注册增加依赖注册器
         /// </summary>
         void AddConventionalRegistrar(IConventionalDependencyRegistrar registrar);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <param name="config"></param>
+        void RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config);
 
         /// <summary>
         /// 用自身注册一个类型

@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{85397689-988F-457F-BF8E-33972E554112}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS", "src\MS\MS.csproj", "{286F3D80-9BD2-4A38-A124-46D453362672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS", "src\MS\MS.csproj", "{286F3D80-9BD2-4A38-A124-46D453362672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6EEF31D0-0A92-4C57-9B1C-EA05180A8CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.Tests", "test\MS360.Tests\MS360.Tests.csproj", "{FD1F642D-2249-492B-90F9-9F4342782824}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{286F3D80-9BD2-4A38-A124-46D453362672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{286F3D80-9BD2-4A38-A124-46D453362672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{286F3D80-9BD2-4A38-A124-46D453362672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD1F642D-2249-492B-90F9-9F4342782824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD1F642D-2249-492B-90F9-9F4342782824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD1F642D-2249-492B-90F9-9F4342782824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD1F642D-2249-492B-90F9-9F4342782824}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{286F3D80-9BD2-4A38-A124-46D453362672} = {85397689-988F-457F-BF8E-33972E554112}
+		{FD1F642D-2249-492B-90F9-9F4342782824} = {6EEF31D0-0A92-4C57-9B1C-EA05180A8CFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {856DA000-E9EF-422E-A4B5-F32CB67142D1}

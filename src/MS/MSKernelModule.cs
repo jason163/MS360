@@ -1,4 +1,6 @@
-﻿using MS.Module;
+﻿using MS.Dependency;
+using MS.Extension;
+using MS.Module;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,12 +14,16 @@ namespace MS
     {
         public override void PreInitialize()
         {
-            base.PreInitialize();
+            IocManager.AddConventionalRegistrar(new BasicConventionalRegistrar());
         }
 
         public override void Initialize()
         {
-            base.Initialize();
+            IocManager.RegisterAssemblyByConvention(typeof(MSKernelModule).GetAssembly(),
+                new ConventionalRegistrationConfig
+                {
+                    InstallInstallers = false
+                });
         }
 
         public override void PostInitialize()
