@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.Tests", "test\MS360.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.DataAccess", "src\MS.DataAccess\MS.DataAccess.csproj", "{F0C71299-D69A-4F44-A9E8-C8652214DFB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.DataAccess.Tests", "test\MS360.DataAccess.Tests\MS360.DataAccess.Tests.csproj", "{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{F0C71299-D69A-4F44-A9E8-C8652214DFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0C71299-D69A-4F44-A9E8-C8652214DFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0C71299-D69A-4F44-A9E8-C8652214DFB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{286F3D80-9BD2-4A38-A124-46D453362672} = {85397689-988F-457F-BF8E-33972E554112}
 		{FD1F642D-2249-492B-90F9-9F4342782824} = {6EEF31D0-0A92-4C57-9B1C-EA05180A8CFB}
 		{F0C71299-D69A-4F44-A9E8-C8652214DFB5} = {85397689-988F-457F-BF8E-33972E554112}
+		{93FEFEB9-5F9D-48DE-AEBF-362751A5CC39} = {6EEF31D0-0A92-4C57-9B1C-EA05180A8CFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {856DA000-E9EF-422E-A4B5-F32CB67142D1}

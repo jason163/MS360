@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Abp.Runtime.Caching
+namespace MS.Runtime.Caching
 {
     /// <summary>
     /// Extension methods for <see cref="ICache"/>.
@@ -29,6 +29,11 @@ namespace Abp.Runtime.Caching
         {
             var tasks = keys.Select(key => cache.GetAsync(key, k => factory()));
             return Task.WhenAll(tasks);
+        }
+
+        public static ITypedCache<TKey, TValue> AsTyped<TKey, TValue>(this ICache cache)
+        {
+            return new TypedCacheWrapper<TKey, TValue>(cache);
         }
 
         public static TValue Get<TKey, TValue>(this ICache cache, TKey key, Func<TKey, TValue> factory)
