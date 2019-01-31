@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace MS
@@ -12,6 +13,11 @@ namespace MS
     {
         public MSException()
         {
+        }
+        public MSException(SerializationInfo serializationInfo, StreamingContext context)
+            : base(serializationInfo, context)
+        {
+
         }
 
         public MSException(string msg) : base(msg) { }

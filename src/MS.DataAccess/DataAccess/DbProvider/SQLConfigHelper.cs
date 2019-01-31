@@ -25,7 +25,8 @@ namespace MS.DataAccess.DbProvider
 
         public List<SQL> GetSQLList()
         {
-            return _cacheManager.GetCache("LocalMemory").Get("MS360_DataAccess_SQLConfig", () => {
+            return (List<SQL>)_cacheManager.GetCache("LocalMemory").Get("MS360_DataAccess_SQLConfig", k =>
+            {
                 return LoadConfigs();
             });
         }
@@ -85,7 +86,7 @@ namespace MS.DataAccess.DbProvider
                         }
                         else
                         {
-                            throw new Exception(string.Format("Not found sql file {0}", filePath));
+                            throw new System.Exception(string.Format("Not found sql file {0}", filePath));
                         }
                     }
                 }

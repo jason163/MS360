@@ -5,10 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Runtime\Caching\Configuration\**" />
+    <EmbeddedResource Remove="Runtime\Caching\Configuration\**" />
+    <None Remove="Runtime\Caching\Configuration\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Runtime\Caching\CacheExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.3.1" />
     <PackageReference Include="Castle.LoggingFacility" Version="4.1.1" />
     <PackageReference Include="JetBrains.Annotations" Version="2018.2.1" />
+    <PackageReference Include="Nito.AsyncEx.Context" Version="1.1.0" />
+    <PackageReference Include="Nito.AsyncEx.Coordination" Version="1.0.2" />
     <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Runtime\Caching\" />
+    <Folder Include="Transactions\" />
+    <Folder Include="Xml\" />
   </ItemGroup>
 
 </Project>

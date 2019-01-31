@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using MS.DataAccess.DbProvider;
+using MS.Dependency;
 using MS.Extension;
 using MS.Module;
 
@@ -24,7 +25,7 @@ namespace MS.DataAccess
         public override void Initialize()
         {
             // 注册当前程序集
-            IocManager.RegisterAssemblyByConvention(typeof(MSDataAccessModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(MSDataAccessModule).GetAssembly(), new ConventionalRegistrationConfig());
         }
 
     }

@@ -27,7 +27,7 @@ namespace MS.DataAccess.DbProvider
             }
             else
             {
-                throw new AbpException(string.Format("Not found sql file {0}", filePath));
+                throw new MSException(string.Format("Not found sql file {0}", filePath));
             }
         }
     }

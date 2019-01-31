@@ -7,14 +7,14 @@ using System.Data.Common;
 namespace MS.DataAccess.DbProvider
 {
     [Serializable]
-    public class DataAccessException : AbpException
+    public class DataAccessException : MSException
     {
         public DataAccessException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
 
-        public DataAccessException(Exception innerException, string connectionStr, string sqlText,
+        public DataAccessException(System.Exception innerException, string connectionStr, string sqlText,
             params DbParameter[] commandParameters)
             : base(BuilderMessage(innerException.Message, connectionStr, sqlText, commandParameters), innerException)
         {

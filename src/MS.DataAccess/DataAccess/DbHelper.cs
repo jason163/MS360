@@ -32,7 +32,7 @@ namespace MS.DataAccess
             DBConnection conn = _configProvider.ConfigSetting().DBConnectionList.Find(f => f.Key.ToUpper().Trim() == connectionKey.ToUpper().Trim());
             if (conn == null)
             {
-                throw new Exception(string.Format("Don't found DBConnection Key", connectionKey));
+                throw new System.Exception(string.Format("Don't found DBConnection Key", connectionKey));
             }
             connectionString = conn.ConnectionString;
         }
@@ -62,7 +62,7 @@ namespace MS.DataAccess
                 cmd.Parameters.Clear();
                 return val;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 throw new DataAccessException(ex, connectionString, cmdText, commandParameters);
             }
@@ -100,7 +100,7 @@ namespace MS.DataAccess
                 // cmd.Parameters.Clear();
                 return rdr;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 if (wrapper != null)
                 {
@@ -125,7 +125,7 @@ namespace MS.DataAccess
                 cmd.Parameters.Clear();
                 return val;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 throw new DataAccessException(ex, connectionString, cmdText, commandParameters);
             }
@@ -155,7 +155,7 @@ namespace MS.DataAccess
                 sda.Fill(ds);
                 cmd.Parameters.Clear();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 throw new DataAccessException(ex, connectionString, cmdText, commandParameters);
             }
@@ -186,7 +186,7 @@ namespace MS.DataAccess
                 sda.Fill(table);
                 cmd.Parameters.Clear();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 throw new DataAccessException(ex, connectionString, cmdText, commandParameters);
             }
