@@ -6,7 +6,7 @@ using System.Text;
 namespace MS
 {
     /// <summary>
-    /// 
+    /// MS 启动参数选项
     /// </summary>
     public class MSBootstrapperOptions
     {
@@ -16,7 +16,7 @@ namespace MS
         public bool DisableAllInterceptors { get; set; }
 
         /// <summary>
-        /// IIocManager that is used to bootstrap the ABP system. If set to null, uses global <see cref="Abp.Dependency.IocManager.Instance"/>
+        /// IIocManager that is used to bootstrap the MS system. If set to null, uses global <see cref="MS.Dependency.IocManager.Instance"/>
         /// </summary>
         public IIocManager IocManager { get; set; }
 

@@ -3,7 +3,7 @@ using System;
 namespace MS.Runtime.Caching.Configuration
 {
     /// <summary>
-    /// A registered cache configurator.
+    /// 已注册的缓存配置器
     /// </summary>
     public interface ICacheConfigurator
     {
@@ -14,7 +14,7 @@ namespace MS.Runtime.Caching.Configuration
         string CacheName { get; }
 
         /// <summary>
-        /// Configuration action. Called just after the cache is created.
+        /// Configuration action. 缓存被创建后调用
         /// </summary>
         Action<ICache> InitAction { get; }
     }

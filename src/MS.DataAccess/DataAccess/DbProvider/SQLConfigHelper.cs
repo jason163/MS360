@@ -17,7 +17,8 @@ namespace MS.DataAccess.DbProvider
         private readonly ICacheManager _cacheManager;
         private readonly IDbConfigProvider _dbConfigProvider;
 
-        public SQLConfigHelper(ICacheManager cacheManager,IDbConfigProvider dbConfigProvider)
+
+        public SQLConfigHelper(IDbConfigProvider dbConfigProvider,ICacheManager cacheManager)
         {
             this._cacheManager = cacheManager;
             this._dbConfigProvider = dbConfigProvider;

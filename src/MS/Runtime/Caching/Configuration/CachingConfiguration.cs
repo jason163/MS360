@@ -5,9 +5,15 @@ using MS.Configuration.Startup;
 
 namespace MS.Runtime.Caching.Configuration
 {
-    internal class CachingConfiguration : ICachingConfiguration
+    // <summary>
+    /// 用于配置缓存系统
+    /// </summary>
+    public class CachingConfiguration : ICachingConfiguration
     {
-        public IAbpStartupConfiguration AbpConfiguration { get; private set; }
+        /// <summary>
+        /// 用于获取 MS 框架配置对象
+        /// </summary>
+        public IMSStartupConfiguration MSConfiguration { get; private set; }
 
         public IReadOnlyList<ICacheConfigurator> Configurators
         {
@@ -15,9 +21,9 @@ namespace MS.Runtime.Caching.Configuration
         }
         private readonly List<ICacheConfigurator> _configurators;
 
-        public CachingConfiguration(IAbpStartupConfiguration abpConfiguration)
+        public CachingConfiguration(IMSStartupConfiguration msConfiguration)
         {
-            AbpConfiguration = abpConfiguration;
+            MSConfiguration = msConfiguration;
 
             _configurators = new List<ICacheConfigurator>();
         }

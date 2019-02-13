@@ -1,8 +1,9 @@
 ﻿using MS.Dependency;
 using Castle.Core.Logging;
 using MS.Runtime.Caching;
+using MS.Runtime.Caching.Configuration;
 
-namespace Abp.Runtime.Caching.Memory
+namespace MS.Runtime.Caching.Memory
 {
     /// <summary>
     /// Implements <see cref="ICacheManager"/> to work with MemoryCache.
@@ -14,8 +15,8 @@ namespace Abp.Runtime.Caching.Memory
         /// <summary>
         /// Constructor.
         /// </summary>
-        public MSMemoryCacheManager(IIocManager iocManager)
-            : base(iocManager)
+        public MSMemoryCacheManager(IIocManager iocManager, ICachingConfiguration configuration)
+            : base(iocManager, configuration)
         {
             Logger = NullLogger.Instance;
         }

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using MS.Dependency;
+using MS.Runtime.Caching.Configuration;
 
 namespace MS.Runtime.Caching
 {
     /// <summary>
-    /// Base class for cache managers.
+    /// 缓存管理基础类
     /// </summary>
     public abstract class CacheManagerBase : ICacheManager, ISingletonDependency
     {
         protected readonly IIocManager IocManager;
 
-        //protected readonly ICachingConfiguration Configuration;
+        protected readonly ICachingConfiguration Configuration;
 
         protected readonly ConcurrentDictionary<string, ICache> Caches;
 
@@ -22,10 +23,10 @@ namespace MS.Runtime.Caching
         /// </summary>
         /// <param name="iocManager"></param>
         /// <param name="configuration"></param>
-        protected CacheManagerBase(IIocManager iocManager)
+        protected CacheManagerBase(IIocManager iocManager,ICachingConfiguration configuration)
         {
             IocManager = iocManager;
-            //Configuration = configuration;
+            Configuration = configuration;
             Caches = new ConcurrentDictionary<string, ICache>();
         }
 
@@ -36,17 +37,16 @@ namespace MS.Runtime.Caching
         
         public virtual ICache GetCache(string name)
         {
-
             return Caches.GetOrAdd(name, (cacheName) =>
             {
                 var cache = CreateCacheImplementation(cacheName);
 
-                //var configurators = Configuration.Configurators.Where(c => c.CacheName == null || c.CacheName == cacheName);
+                var configurators = Configuration.Configurators.Where(c => c.CacheName == null || c.CacheName == cacheName);
 
-                //foreach (var configurator in configurators)
-                //{
-                //    configurator.InitAction?.Invoke(cache);
-                //}
+                foreach (var configurator in configurators)
+                {
+                    configurator.InitAction?.Invoke(cache);
+                }
 
                 return cache;
             });
@@ -67,7 +67,7 @@ namespace MS.Runtime.Caching
         }
 
         /// <summary>
-        /// Used to create actual cache implementation.
+        /// 用于创建真实的缓存实现对象
         /// </summary>
         /// <param name="name">Name of the cache</param>
         /// <returns>Cache object</returns>

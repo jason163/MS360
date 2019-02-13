@@ -1,25 +1,26 @@
-﻿using System;
+﻿using MS.Configuration.Startup;
+using System;
 using System.Collections.Generic;
 
 namespace MS.Runtime.Caching.Configuration
 {
     /// <summary>
-    /// Used to configure caching system.
+    /// 用于配置缓存系统
     /// </summary>
     public interface ICachingConfiguration
     {
         /// <summary>
-        /// Gets the ABP configuration object.
+        /// 用于获取 MS 框架配置对象
         /// </summary>
-        //IAbpStartupConfiguration AbpConfiguration { get; }
+        IMSStartupConfiguration MSConfiguration { get; }
 
         /// <summary>
-        /// List of all registered configurators.
+        /// 已注册的配置器
         /// </summary>
         IReadOnlyList<ICacheConfigurator> Configurators { get; }
 
         /// <summary>
-        /// Used to configure all caches.
+        /// 用于配置所有缓存
         /// </summary>
         /// <param name="initAction">
         /// An action to configure caches
@@ -28,7 +29,7 @@ namespace MS.Runtime.Caching.Configuration
         void ConfigureAll(Action<ICache> initAction);
 
         /// <summary>
-        /// Used to configure a specific cache. 
+        /// 用于配置指定缓存 
         /// </summary>
         /// <param name="cacheName">Cache name</param>
         /// <param name="initAction">

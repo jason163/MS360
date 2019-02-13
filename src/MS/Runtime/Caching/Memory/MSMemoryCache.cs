@@ -4,7 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 using MS.Runtime.Caching;
 using MS;
 
-namespace Abp.Runtime.Caching.Memory
+namespace MS.Runtime.Caching.Memory
 {
     /// <summary>
     /// Implements <see cref="ICache"/> to work with <see cref="MemoryCache"/>.

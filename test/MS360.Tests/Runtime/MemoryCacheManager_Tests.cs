@@ -1,11 +1,11 @@
-﻿using Abp.Runtime.Caching.Memory;
-using Castle.MicroKernel.Registration;
+﻿using MS.Configuration.Startup;
 using MS.Dependency;
 using MS.Runtime.Caching;
+using MS.Runtime.Caching.Configuration;
+using MS.Runtime.Caching.Memory;
 using Shouldly;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace MS360.Tests.Runtime
@@ -17,8 +17,11 @@ namespace MS360.Tests.Runtime
 
         public MemoryCacheManager_Tests()
         {
+            LocalIocManager.Register<IMSStartupConfiguration, MSStartupConfiguration>();
+            LocalIocManager.Register<ICachingConfiguration, CachingConfiguration>();
             LocalIocManager.Register<ICacheManager, MSMemoryCacheManager>();
             LocalIocManager.Register<MyClientPropertyInjects>(DependencyLifeStyle.Transient);
+
 
             _cacheManager = LocalIocManager.Resolve<ICacheManager>();
 

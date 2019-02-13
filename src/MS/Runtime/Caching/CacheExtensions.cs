@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace MS.Runtime.Caching
 {
     /// <summary>
-    /// Extension methods for <see cref="ICache"/>.
+    /// 实现 <see cref="ICache"/> 接口类的扩展方法.
     /// </summary>
     public static class CacheExtensions
     {

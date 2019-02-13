@@ -6,6 +6,8 @@ using MS.DataAccess.DbProvider;
 using MS.Dependency;
 using MS.Extension;
 using MS.Module;
+using MS.Runtime.Caching;
+using MS.Runtime.Caching.Memory;
 
 namespace MS.DataAccess
 {

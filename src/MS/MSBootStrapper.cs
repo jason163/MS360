@@ -1,6 +1,7 @@
 ﻿using Castle.Core.Logging;
 using Castle.MicroKernel.Registration;
 using JetBrains.Annotations;
+using MS.Configuration.Startup;
 using MS.Dependency;
 using MS.Dependency.Installers;
 using MS.Module;
@@ -81,10 +82,13 @@ namespace MS
 
             try
             {
+                // 注册启动类自身
                 RegisterBootstrapper();
+                // 注册MS 相关基础依赖
                 IocManager.IocContainer.Install(new MSCoreInstaller());
                 //IocManager.Resolve<AbpPlugInManager>().PlugInSources.AddRange(PlugInSources);
-                //IocManager.Resolve<AbpStartupConfiguration>().Initialize();
+                // 初始化配置
+                IocManager.Resolve<MSStartupConfiguration>().Initialize();
 
                 _moduleManager = IocManager.Resolve<MSModuleManager>();
                 _moduleManager.Initialize(StartupModule);

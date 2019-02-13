@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 namespace MS.Runtime.Caching
 {
     /// <summary>
-    /// An upper level container for <see cref="ICache"/> objects. 
+    /// 实现接口 <see cref="ICache"/> 缓存对象的上层容器. 
     /// A cache manager should work as Singleton and track and manage <see cref="ICache"/> objects.
     /// </summary>
     public interface ICacheManager : IDisposable

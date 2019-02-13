@@ -8,7 +8,7 @@ using Nito.AsyncEx;
 namespace MS.Runtime.Caching
 {
     /// <summary>
-    /// Base class for caches.
+    /// »º´æ»ù´¡ÐéÄâÀà
     /// It's used to simplify implementing <see cref="ICache"/>.
     /// </summary>
     public abstract class CacheBase : ICache

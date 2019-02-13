@@ -2,7 +2,7 @@ using System;
 
 namespace MS.Runtime.Caching.Configuration
 {
-    internal class CacheConfigurator : ICacheConfigurator
+    public class CacheConfigurator : ICacheConfigurator
     {
         public string CacheName { get; private set; }
 
