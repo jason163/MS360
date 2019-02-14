@@ -15,6 +15,10 @@ namespace MS
         public override void PreInitialize()
         {
             IocManager.AddConventionalRegistrar(new BasicConventionalRegistrar());
+
+            IocManager.Register<IScopedIocResolver, ScopedIocResolver>(DependencyLifeStyle.Transient);
+
+            // 系统配置
         }
 
         public override void Initialize()

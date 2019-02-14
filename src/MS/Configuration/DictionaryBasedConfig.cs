@@ -6,6 +6,7 @@ using System.Text;
 namespace MS.Configuration
 {
     /// <summary>
+    /// 用于保存自定义模块配置信息
     /// Used to set/get custom configuration.
     /// </summary>
     public class DictionaryBasedConfig : IDictionaryBasedConfig

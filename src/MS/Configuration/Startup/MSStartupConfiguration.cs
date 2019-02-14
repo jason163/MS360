@@ -17,6 +17,9 @@ namespace MS.Configuration.Startup
 
         public Dictionary<Type, Action> ServiceReplaceActions { get; private set; }
 
+        public IList<ICustomConfigProvider> CustomConfigProviders { get; private set; }
+
+        public IModuleConfigurations Modules { get; private set; }
 
         public MSStartupConfiguration(IIocManager iocManager)
         {
@@ -29,7 +32,9 @@ namespace MS.Configuration.Startup
         public void Initialize()
         {
             Caching = IocManager.Resolve<ICachingConfiguration>();
-            
+            Modules = IocManager.Resolve<IModuleConfigurations>();
+
+            CustomConfigProviders = new List<ICustomConfigProvider>();
             ServiceReplaceActions = new Dictionary<Type, Action>();
         }
 
@@ -41,6 +46,29 @@ namespace MS.Configuration.Startup
         public T Get<T>()
         {
             return GetOrCreate(typeof(T).FullName, () => IocManager.Resolve<T>());
+        }
+
+        /// <summary>
+        /// 获取自定义模块配置信息
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, object> GetCustomConfig()
+        {
+            var mergedConfig = new Dictionary<string, object>();
+
+            using (var scope = IocManager.CreateScope())
+            {
+                foreach (var provider in CustomConfigProviders)
+                {
+                    var config = provider.GetConfig(new CustomConfigProviderContext(scope));
+                    foreach (var keyValue in config)
+                    {
+                        mergedConfig[keyValue.Key] = keyValue.Value;
+                    }
+                }
+            }
+
+            return mergedConfig;
         }
     }
 }

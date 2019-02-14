@@ -15,13 +15,15 @@ namespace MS.DataAccess.DbProvider
     public class SQLConfigHelper : ISQLConfigHelper
     {
         private readonly ICacheManager _cacheManager;
+        private readonly IMSDataAccessModuleConfiguration _configuration;
         private readonly IDbConfigProvider _dbConfigProvider;
 
 
-        public SQLConfigHelper(IDbConfigProvider dbConfigProvider,ICacheManager cacheManager)
+        public SQLConfigHelper(IDbConfigProvider dbConfigProvider,ICacheManager cacheManager,IMSDataAccessModuleConfiguration moduleConfiguration)
         {
             this._cacheManager = cacheManager;
             this._dbConfigProvider = dbConfigProvider;
+            this._configuration = moduleConfiguration;
         }
 
         public List<SQL> GetSQLList()
@@ -46,7 +48,8 @@ namespace MS.DataAccess.DbProvider
                 {
                     foreach (string file in dbConfig.SQLFileList)
                     {
-                        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Configuration\Data", file);
+
+                        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, this._configuration.ConfigPath, file);
                         if (File.Exists(filePath))
                         {
                             SQLConfig sqlConfig = XmlSerializationHelper.LoadFromXml<SQLConfig>(filePath);

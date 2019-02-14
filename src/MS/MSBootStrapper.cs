@@ -84,14 +84,17 @@ namespace MS
             {
                 // 注册启动类自身
                 RegisterBootstrapper();
-                // 注册MS 相关基础依赖
+
+                // 注册MS 相关系统框架级基础依赖
                 IocManager.IocContainer.Install(new MSCoreInstaller());
                 //IocManager.Resolve<AbpPlugInManager>().PlugInSources.AddRange(PlugInSources);
-                // 初始化配置
+
+                // 初始化配置,该方法最终调用容器生成他的小伙伴的各种实例（****Configuration）
                 IocManager.Resolve<MSStartupConfiguration>().Initialize();
 
                 _moduleManager = IocManager.Resolve<MSModuleManager>();
                 _moduleManager.Initialize(StartupModule);
+
                 _moduleManager.StartModules();
             }
             catch (System.Exception ex)

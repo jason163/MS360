@@ -1,4 +1,5 @@
 ﻿using Castle.Core.Logging;
+using MS.Configuration.Startup;
 using MS.Dependency;
 using MS.Exception;
 using System;
@@ -75,8 +76,9 @@ namespace MS.Module
             var moduleTypes = FindAllModuleTypes(out plugInModuleTypes).Distinct().ToList();
 
             Logger.Debug("Found " + moduleTypes.Count + " ABP modules in total.");
-
+            // 注册模块到容器
             RegisterModules(moduleTypes);
+            // 创建模块信息如：模块配置信息
             CreateModules(moduleTypes);
 
             _modules.EnsureKernelModuleToBeFirst();
@@ -105,6 +107,10 @@ namespace MS.Module
             return modules;
         }
 
+        /// <summary>
+        /// 创建模块信息,此方法被<see cref="MSBootStrapper.Initialize"/> 调用
+        /// </summary>
+        /// <param name="moduleTypes"></param>
         private void CreateModules(ICollection<Type> moduleTypes)
         {
             foreach (var moduleType in moduleTypes)
@@ -116,7 +122,7 @@ namespace MS.Module
                 }
 
                 moduleObject.IocManager = _iocManager;
-                //moduleObject.Configuration = _iocManager.Resolve<IAbpStartupConfiguration>();
+                moduleObject.Configuration = _iocManager.Resolve<IMSStartupConfiguration>();
 
                 var moduleInfo = new MSModuleInfo(moduleType, moduleObject, false);
 

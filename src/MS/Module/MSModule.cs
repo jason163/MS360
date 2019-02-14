@@ -1,4 +1,5 @@
 ﻿using Castle.Core.Logging;
+using MS.Configuration.Startup;
 using MS.Dependency;
 using MS.Exception;
 using MS.Extension;
@@ -20,6 +21,11 @@ namespace MS.Module
         /// IOC manager 引用
         /// </summary>
         protected internal IIocManager IocManager { get; internal set; }
+
+        /// <summary>
+        /// MS 框架配置引用
+        /// </summary>
+        protected internal IMSStartupConfiguration Configuration { get; internal set; }
 
         /// <summary>
         /// Castle 日志引用

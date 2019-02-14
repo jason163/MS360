@@ -21,6 +21,12 @@ namespace MS.Configuration.Startup
         /// </summary>
         ICachingConfiguration Caching { get; }
 
+        /// <summary>
+        /// 配置模块.
+        /// 模块通过扩展方法<see cref="IModuleConfigurations"/>来提供模块配置信息
+        /// </summary>
+        IModuleConfigurations Modules { get; }
+
 
         /// <summary>
         /// Used to replace a service type.
@@ -35,8 +41,9 @@ namespace MS.Configuration.Startup
         /// </summary>
         T Get<T>();
 
-        //IList<ICustomConfigProvider> CustomConfigProviders { get; }
+        // 自定义模块配置信息
+        IList<ICustomConfigProvider> CustomConfigProviders { get; }
 
-        //Dictionary<string, object> GetCustomConfig();
+        Dictionary<string, object> GetCustomConfig();
     }
 }

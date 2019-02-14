@@ -5,6 +5,7 @@ using System.Text;
 namespace MS.Configuration
 {
     /// <summary>
+    /// 定义接口用于保存自定义模块配置信息
     /// Defines interface to use a dictionary to make configurations.
     /// </summary>
     public interface IDictionaryBasedConfig

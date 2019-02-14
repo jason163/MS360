@@ -38,11 +38,42 @@ namespace MS.Dependency
         T Resolve<T>(object argumentsAsAnonymousType);
 
         /// <summary>
+        /// 获取对象实例从IOC container.
+        /// </summary>
+        /// <param name="type">对象类型</param>
+        /// <param name="argumentsAsAnonymousType">构造函数参数</param>
+        /// <returns></returns>
+        object Resolve(Type type, object argumentsAsAnonymousType);
+
+        /// <summary>
         /// 获取注册类型所有实现实例
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">被解析列表类型</typeparam>
         /// <returns></returns>
         T[] ResolveAll<T>();
+
+        /// <summary>
+        /// 获取注册类型所有实现实例
+        /// </summary>
+        /// <typeparam name="T">被解析列表类型</typeparam>
+        /// <param name="argumentAsAnonymousType">构造函数参数</param>
+        /// <returns></returns>
+        T[] ResolveAll<T>(object argumentAsAnonymousType);
+
+        /// <summary>
+        /// 获取注册类型所有实现实例
+        /// </summary>
+        /// <param name="type">被解析列表类型</param>
+        /// <returns>对象实例列表</returns>
+        object[] ResolveAll(Type type);
+
+        /// <summary>
+        /// 获取注册类型所有实现实例
+        /// </summary>
+        /// <param name="type">被解析列表类型</param>
+        /// <param name="argumentAsAnonymousType">构造函数参数</param>
+        /// <returns>对象实例列表</returns>
+        object[] ResolveAll(Type type, object argumentAsAnonymousType);
 
         /// <summary>
         /// 释放上一次解析对象

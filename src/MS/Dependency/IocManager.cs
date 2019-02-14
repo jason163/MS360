@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using Castle.DynamicProxy;
@@ -190,9 +191,29 @@ namespace MS.Dependency
             return IocContainer.Resolve<T>(argumentsAsAnonymousType);
         }
 
+        public object Resolve(Type type, object argumentsAsAnonymousType)
+        {
+            return IocContainer.Resolve(type,argumentsAsAnonymousType);
+        }
+
         public T[] ResolveAll<T>()
         {
             return IocContainer.ResolveAll<T>();
+        }
+
+        public T[] ResolveAll<T>(object argumentsAsAnonymousType)
+        {
+            return IocContainer.ResolveAll<T>(argumentsAsAnonymousType);
+        }
+
+        public object[] ResolveAll(Type type)
+        {
+            return IocContainer.ResolveAll(type).Cast<object>().ToArray();
+        }
+
+        public object[] ResolveAll(Type type,object argumentsAsAnonymousType)
+        {
+            return IocContainer.ResolveAll(type, argumentsAsAnonymousType).Cast<object>().ToArray();
         }
 
         public void Release(object obj)
@@ -229,5 +250,6 @@ namespace MS.Dependency
             }
         }
 
+        
     }
 }

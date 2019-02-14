@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MS.DataAccess.Configuration;
 using MS.DataAccess.DbProvider;
 using MS.Dependency;
 using MS.Extension;
@@ -16,6 +17,8 @@ namespace MS.DataAccess
     {
         public override void PreInitialize()
         {
+            IocManager.Register<IMSDataAccessModuleConfiguration, MSDataAccessModuleConfiguration>();
+
             // 注册SQL Server
             IocManager.Register<IDbFactory, SqlServerFactory>();
             IocManager.Register<IDbConfigProvider, DefaultDbConfigProvider>();

@@ -20,6 +20,7 @@ namespace MS.Dependency.Installers
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
+                Component.For<IModuleConfigurations, ModuleConfigurations>().ImplementedBy<ModuleConfigurations>().LifestyleSingleton(),
                 Component.For<ICachingConfiguration, CachingConfiguration>().ImplementedBy<CachingConfiguration>().LifestyleSingleton(),
                 Component.For<ICacheManager, MSMemoryCacheManager>().ImplementedBy<MSMemoryCacheManager>().LifestyleSingleton(),
                 Component.For<IMSStartupConfiguration, MSStartupConfiguration>().ImplementedBy<MSStartupConfiguration>().LifestyleSingleton(),
