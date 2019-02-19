@@ -14,6 +14,7 @@ namespace MS360.Tests.Runtime
     {
         private readonly ICacheManager _cacheManager;
         private readonly ITypedCache<string, MyCacheItem> _cache;
+        private readonly ICache _otherCache;
 
         public MemoryCacheManager_Tests()
         {
@@ -28,6 +29,8 @@ namespace MS360.Tests.Runtime
             var defaultSlidingExpireTime = TimeSpan.FromHours(24);
 
             _cache = _cacheManager.GetCache<string, MyCacheItem>("MyCacheItems");
+            _otherCache = _cacheManager.GetCache("otherCacheItems");
+            
             //_cache.DefaultSlidingExpireTime.ShouldBe(defaultSlidingExpireTime);
         }
 
@@ -38,6 +41,8 @@ namespace MS360.Tests.Runtime
             _cache.GetOrDefault("A").ShouldBe(null);
 
             _cache.Set("A", new MyCacheItem { Value = 42 });
+
+            _otherCache.GetOrDefault("A").ShouldBe(null);
 
             _cache.GetOrDefault("A").ShouldNotBe(null);
             _cache.GetOrDefault("A").Value.ShouldBe(42);

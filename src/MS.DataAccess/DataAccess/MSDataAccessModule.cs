@@ -25,6 +25,10 @@ namespace MS.DataAccess
             IocManager.Register<ISQLConfigHelper, SQLConfigHelper>();
             IocManager.Register<IDbHelper, DbHelper>();
             IocManager.Register<IDataCommand, DataCommand>();
+
+            Configuration.Caching.Configure("MS360_DataAccess", cache => {
+                cache.DefaultSlidingExpireTime = TimeSpan.FromHours(1);
+            });
         }
 
         public override void Initialize()

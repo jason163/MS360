@@ -17,6 +17,7 @@ namespace MS.DataAccess.DbProvider
         private readonly ICacheManager _cacheManager;
         private readonly IMSDataAccessModuleConfiguration _configuration;
         private readonly IDbConfigProvider _dbConfigProvider;
+        private readonly ITypedCache<string, List<SQL>> _cache;
 
 
         public SQLConfigHelper(IDbConfigProvider dbConfigProvider,ICacheManager cacheManager,IMSDataAccessModuleConfiguration moduleConfiguration)
@@ -24,12 +25,12 @@ namespace MS.DataAccess.DbProvider
             this._cacheManager = cacheManager;
             this._dbConfigProvider = dbConfigProvider;
             this._configuration = moduleConfiguration;
+            _cache = _cacheManager.GetCache<string, List<SQL>>("MS360_DataAccess");
         }
 
         public List<SQL> GetSQLList()
         {
-            return (List<SQL>)_cacheManager.GetCache("LocalMemory").Get("MS360_DataAccess_SQLConfig", k =>
-            {
+            return _cache.Get("MS360_DataAccess_SQLConfig", (k) => {
                 return LoadConfigs();
             });
         }

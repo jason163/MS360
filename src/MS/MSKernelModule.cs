@@ -19,6 +19,7 @@ namespace MS
             IocManager.Register<IScopedIocResolver, ScopedIocResolver>(DependencyLifeStyle.Transient);
 
             // 系统配置
+            ConfigureCaches();
         }
 
         public override void Initialize()
@@ -28,6 +29,17 @@ namespace MS
                 {
                     InstallInstallers = false
                 });
+        }
+
+        /// <summary>
+        /// 缓存配置信息
+        /// </summary>
+        private void ConfigureCaches()
+        {
+            Configuration.Caching.Configure("ApplicationSettingsCache", cache =>
+            {
+                cache.DefaultSlidingExpireTime = TimeSpan.FromHours(8);
+            });
         }
 
         public override void PostInitialize()

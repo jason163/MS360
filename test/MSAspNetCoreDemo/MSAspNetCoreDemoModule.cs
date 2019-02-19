@@ -17,7 +17,7 @@ namespace MSAspNetCoreDemo
         public override void PreInitialize()
         {
             // 设置MSDataAccess的配置信息
-            // Configuration.Modules.MSDataAccess().ConfigPath = @"Configuration\Data";
+             Configuration.Modules.MSDataAccess().ConfigPath = @"Configuration\Data";
 
             base.PreInitialize();
         }
