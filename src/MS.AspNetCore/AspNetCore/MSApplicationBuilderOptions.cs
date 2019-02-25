@@ -8,9 +8,12 @@ namespace MS.AspNetCore
     {
         public bool UseCastleLoggerFactory { get; set; }
 
+        public bool UseSecurityHeaders { get; set; }
+
         public MSApplicationBuilderOptions()
         {
             UseCastleLoggerFactory = true;
+            UseSecurityHeaders = true;
         }
 
 

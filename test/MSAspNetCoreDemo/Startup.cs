@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MS;
 using MS.Dependency;
+using MS.AspNetCore;
 
 namespace MSAspNetCoreDemo
 {
@@ -31,14 +32,22 @@ namespace MSAspNetCoreDemo
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSingleton(Configuration);
 
-            var msBootstrapper = MSBootStrapper.Create<MSAspNetCoreDemoModule>();
-            msBootstrapper.Initialize();
-            services.AddSingleton(msBootstrapper);
-            ConfigureAspNetCore(services, msBootstrapper.IocManager);
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            }).AddJsonOptions(options =>
+            {
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            });
+
+            return services.AddMS<MSAspNetCoreDemoModule>(options => {
+                
+            });
+            
         }
 
        
@@ -46,6 +55,9 @@ namespace MSAspNetCoreDemo
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // 初始化MS框架
+            app.UseMS();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

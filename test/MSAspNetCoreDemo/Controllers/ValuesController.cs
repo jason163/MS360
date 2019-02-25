@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MS.AspNetCore.Mvc.Controllers;
 using MS.DataAccess;
 using MS.Dependency;
 
@@ -10,7 +11,7 @@ namespace MSAspNetCoreDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController : MSController
     {
         // GET api/values
         [HttpGet]

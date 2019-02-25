@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\MS.AspNetCore\MS.AspNetCore.csproj" />
     <ProjectReference Include="..\..\src\MS.DataAccess\MS.DataAccess.csproj" />
   </ItemGroup>
 
