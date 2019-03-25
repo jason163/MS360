@@ -1,0 +1,60 @@
+DEBUG 2019-03-21 15:38:47,781 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-03-21 15:38:47,799 [1    ] MS.Module.MSModuleManager                - Found 3 ABP modules in total.
+DEBUG 2019-03-21 15:38:47,802 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:38:47,805 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:38:47,805 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:38:47,808 [1    ] MS.Module.MSModuleManager                - 3 modules loaded.
+INFO  2019-03-21 15:38:48,231 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-03-21 15:38:48,371 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 15:38:48,382 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-03-21 15:38:48,385 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.277ms.
+INFO  2019-03-21 15:38:48,392 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-03-21 15:38:48,431 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 57.984ms
+INFO  2019-03-21 15:38:48,441 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 211.8923ms 200 application/json; charset=utf-8
+DEBUG 2019-03-21 15:40:57,468 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-03-21 15:40:57,499 [1    ] MS.Module.MSModuleManager                - Found 3 ABP modules in total.
+DEBUG 2019-03-21 15:40:57,502 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:40:57,505 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:40:57,505 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 15:40:57,507 [1    ] MS.Module.MSModuleManager                - 3 modules loaded.
+INFO  2019-03-21 15:40:58,116 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-03-21 15:40:58,116 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-03-21 15:40:58,169 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 45.9844ms 200 
+INFO  2019-03-21 15:40:58,410 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 15:40:58,540 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-03-21 15:40:58,546 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.5478ms.
+INFO  2019-03-21 15:40:58,555 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-03-21 15:40:58,598 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 183.4462ms
+INFO  2019-03-21 15:40:58,614 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 501.0985ms 200 application/json; charset=utf-8
+INFO  2019-03-21 16:35:04,645 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-03-21 16:35:04,665 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 16:35:04,741 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-03-21 16:35:04,756 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1137ms.
+INFO  2019-03-21 16:35:04,759 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-03-21 16:35:04,767 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 95.5625ms
+INFO  2019-03-21 16:35:04,771 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 179.0009ms 200 application/json; charset=utf-8
+INFO  2019-03-21 16:40:47,546 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-03-21 16:40:47,548 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 16:40:47,565 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+DEBUG 2019-03-21 16:42:33,460 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-03-21 16:42:33,489 [1    ] MS.Module.MSModuleManager                - Found 3 ABP modules in total.
+DEBUG 2019-03-21 16:42:33,492 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 16:42:33,496 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 16:42:33,497 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-21 16:42:33,499 [1    ] MS.Module.MSModuleManager                - 3 modules loaded.
+INFO  2019-03-21 16:42:34,204 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-03-21 16:42:34,204 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-03-21 16:42:34,256 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 48.7498ms 200 
+INFO  2019-03-21 16:42:34,488 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 16:42:34,631 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-03-21 16:42:34,637 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.487ms.
+INFO  2019-03-21 16:42:34,651 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-03-21 16:42:34,711 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 217.9175ms
+INFO  2019-03-21 16:42:34,729 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 531.8117ms 200 application/json; charset=utf-8
+INFO  2019-03-21 16:42:48,172 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values/1  
+INFO  2019-03-21 16:42:48,198 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-03-21 16:42:48,232 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) with arguments (1) - Validation state: Valid
+INFO  2019-03-21 16:43:09,540 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 21305.8438ms.
+INFO  2019-03-21 16:43:09,542 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-03-21 16:43:09,545 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 21344.4503ms
+INFO  2019-03-21 16:43:09,547 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21374.4023ms 200 text/plain; charset=utf-8

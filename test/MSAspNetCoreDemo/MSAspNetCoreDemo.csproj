@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MS.Castle.Log4Net\MS.Castle.Log4Net.csproj" />
     <ProjectReference Include="..\..\src\MS.AspNetCore\MS.AspNetCore.csproj" />
     <ProjectReference Include="..\..\src\MS.DataAccess\MS.DataAccess.csproj" />
   </ItemGroup>

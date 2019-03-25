@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.ViewComponents;
-using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MS;
-using MS.Dependency;
 using MS.AspNetCore;
+using MS.Castle.Logging.Log4Net;
+using MS.Dependency;
+using System;
 
 namespace MSAspNetCoreDemo
 {
@@ -45,7 +37,9 @@ namespace MSAspNetCoreDemo
             });
 
             return services.AddMS<MSAspNetCoreDemoModule>(options => {
-                
+            options.IocManager.IocContainer.AddFacility<LoggingFacility>(
+                f => f.UseMSLog4Net().WithConfig("log4net.config")
+                    );
             });
             
         }

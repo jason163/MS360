@@ -13,6 +13,13 @@ namespace MSAspNetCoreDemo.Controllers
     [ApiController]
     public class ValuesController : MSController
     {
+        private IDataCommand cmd;
+
+        public ValuesController(IDataCommand dataCommand)
+        {
+            this.cmd = dataCommand;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -24,9 +31,9 @@ namespace MSAspNetCoreDemo.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            IDataCommand command = IocManager.Instance.Resolve<IDataCommand>();
-            command = command.CreateCommand("GetAllChannelList");
-            var list = command.ExecuteEntityList<Channel>();
+            //IDataCommand command = IocManager.Instance.Resolve<IDataCommand>();
+            cmd.CreateCommand("GetAllChannelList");
+            var list = cmd.ExecuteEntityList<Channel>();
 
             return "value";
         }
