@@ -1,4 +1,5 @@
 ﻿using MS.WebApi.Configuration;
+using MS.WebApi.Controllers.Dynamic.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,8 +43,19 @@ namespace MS.WebApi.Controllers.Dynamic.Selectors
             var hasActionName = (bool)controllerContext.ControllerDescriptor.Properties["__MSDynamicApiHasActionName"];
             if (!hasActionName)
             {
-                return 
+                return GetActionDescriptorByCurrentHttpVerb(controllerContext, controllerInfo);
             }
+            //从路由中获取action名称
+            var serviceNameWithAction = controllerContext.RouteData.Values["serviceNameWithAction"] as string;
+            if(null ==serviceNameWithAction)
+            {
+                return base.SelectAction(controllerContext);
+            }
+            var actionName = DynamicApiServiceNameHelper.GetActionNameInServiceNameWithAction(serviceNameWithAction);
+
+            return GetActionDescriptorByActionName(controllerContext, controllerInfo, actionName);
+
+
         }
 
         private HttpActionDescriptor GetActionDescriptorByCurrentHttpVerb(HttpControllerContext controllerContext, DynamicApiControllerInfo controllerInfo)
@@ -75,6 +87,27 @@ namespace MS.WebApi.Controllers.Dynamic.Selectors
 
             //Return the single action by the current http verb
             return new DynamicHttpActionDescriptor(_configuration, controllerContext.ControllerDescriptor, actionsByVerb[0]);
+        }
+
+        private HttpActionDescriptor GetActionDescriptorByActionName(HttpControllerContext controllerContext,DynamicApiControllerInfo controllerInfo,string actionName)
+        {
+            DynamicApiActionInfo actionInfo;
+            if(!controllerInfo.Actions.TryGetValue(actionName,out actionInfo))
+            {
+                throw new MSException("There is no action " + actionName + " defined for api controller " + controllerInfo.ServiceName);
+            }
+            if(actionInfo.Verb != controllerContext.Request.Method.ToHttpVerb())
+            {
+                throw new HttpException(
+                    (int)HttpStatusCode.BadRequest +
+                    " There is an action " + actionName+
+                    " defined for api controller " + controllerInfo.ServiceName +
+                    " but with a different HTTP verb.Request verb is " + controllerContext.Request.Method +
+                    " It should be " + actionInfo.Verb
+                    );
+            }
+
+            return new DynamicHttpActionDescriptor(_configuration, controllerContext.ControllerDescriptor, actionInfo);
         }
     }
 }

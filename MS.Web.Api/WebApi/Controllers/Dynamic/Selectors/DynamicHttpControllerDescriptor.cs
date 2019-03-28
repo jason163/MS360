@@ -53,8 +53,7 @@ namespace MS.WebApi.Controllers.Dynamic.Selectors
         public override Collection<T> GetCustomAttributes<T>(bool inherit)
         {
             var attributes = inherit ? _attributes : _declareOnlyAttributes;
-            return new Collection<T>(dynamicapide)
-            return base.GetCustomAttributes<T>(inherit);
+            return new Collection<T>(DynamicApiDescriptorHelper.FilterType<T>(attributes));
         }
     }
 }

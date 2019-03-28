@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MS.Web.Common\MS.Web.Common.csproj" />
     <ProjectReference Include="..\src\MS\MS.csproj" />
   </ItemGroup>
 
