@@ -1,4 +1,5 @@
 ﻿using MS.Dependency;
+using MS.WebApi.Controllers.Dynamic.Interceptors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,11 @@ using System.Web.Http.Filters;
 
 namespace MS.WebApi.Controllers.Dynamic.Builders
 {
-    internal class ApiControllerBuilder<T> : IApiControllerBuilder<T>
+    /// <summary>
+    /// 创建<see cref="DynamicApiControllerInfo"/> 实例
+    /// </summary>
+    /// <typeparam name="T">被代理对象</typeparam>
+    public class ApiControllerBuilder<T> : IApiControllerBuilder<T>
     {
         /// <summary>
         /// Name of the controller.
@@ -34,6 +39,7 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
         /// True, if using conventional verbs for this dynamic controller.
         /// </summary>
         public bool ConventionalVerbs { get; set; }
+
         public bool IsApiExploreEnabled { get; set; }
 
         /// <summary>
@@ -45,36 +51,88 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
 
         public ApiControllerBuilder(string serviceName, IIocResolver iocResolver)
         {
+            if (string.IsNullOrWhiteSpace(serviceName))
+            {
+                throw new ArgumentException("serviceName null or empty","serviceName");
+            }
 
+            if (!DynamicApiServiceNameHelper.IsValidServiceName(serviceName))
+            {
+                throw new ArgumentException("serviceName is not properly formatted! It must contain a single-depth namespace at least! For example: 'myapplication/myservice'.", "serviceName");
+            }
+
+            _iocResolver = iocResolver;
+
+            ServiceName = serviceName;
+            ServiceInterfaceType = typeof(T);
+
+            _actionBuilders = new Dictionary<string, ApiControllerActionBuilder<T>>();
+
+            foreach(var methodInfo in DynamicApiControllerActionHelper.GetMethodsOfType(typeof(T)))
+            {
+                var actionBuilder = new ApiControllerActionBuilder<T>(this, methodInfo, iocResolver);
+
+                _actionBuilders[methodInfo.Name] = actionBuilder;
+            }
         }
+
         public void Build()
         {
-            throw new NotImplementedException();
-        }
+            var controllerInfo = new DynamicApiControllerInfo(ServiceName, ServiceInterfaceType,
+                typeof(DynamicApiController<T>), typeof(MSDynamicApiControllerInterceptor<T>)
+                , Filters, IsApiExplorerEnabled);
 
-        public IApiControllerBuilder<T> ForMethod(string methodName)
+            foreach(var actionBuilder in _actionBuilders.Values)
+            {
+                if (actionBuilder.DontCreate)
+                {
+                    continue;
+                }
+                controllerInfo.Actions[actionBuilder.ActionName] = actionBuilder.BuildActionInfo(ConventionalVerbs);
+            }
+
+            _iocResolver.Resolve<DynamicApiControllerManager>().Register(controllerInfo);
+        }
+        
+
+        public IApiControllerActionBuilder<T> ForMethod(string methodName)
         {
-            throw new NotImplementedException();
+            if (!_actionBuilders.ContainsKey(methodName))
+            {
+                throw new MSException("There is no method with name "+ methodName + " in type "+typeof(T).Name);
+            }
+
+            return _actionBuilders[methodName];
         }
 
         public IApiControllerBuilder<T> ForMethods(Action<IApiControllerActionBuilder> action)
         {
-            throw new NotImplementedException();
+            foreach (var actionBuilder in _actionBuilders.Values)
+            {
+                action(actionBuilder);
+            }
+
+            return this;
         }
 
         public IApiControllerBuilder<T> WithApiExplorer(bool isEnabled)
         {
-            throw new NotImplementedException();
+            IsApiExploreEnabled = isEnabled;
+            return this;
         }
 
         public IApiControllerBuilder<T> WithConventionalVerbs()
         {
-            throw new NotImplementedException();
+            ConventionalVerbs = true;
+            return this;
         }
 
         public IApiControllerBuilder<T> WithFilters(params IFilter[] filters)
         {
-            throw new NotImplementedException();
+            Filters = filters;
+            return this;
         }
+
+        
     }
 }

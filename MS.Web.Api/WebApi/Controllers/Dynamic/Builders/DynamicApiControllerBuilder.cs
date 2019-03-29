@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MS.WebApi.Controllers.Dynamic.Builders
 {
+    /// <summary>
+    /// 生产动态api controller 为任意类型
+    /// </summary>
     public class DynamicApiControllerBuilder : IDynamicApiControllerBuilder
     {
         private readonly IIocResolver _iocResolver;

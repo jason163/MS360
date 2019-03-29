@@ -11,6 +11,9 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
 {
     public interface IApiControllerActionBuilder
     {
+        /// <summary>
+        /// 当前Action关联的Controller builder
+        /// </summary>
         IApiControllerBuilder Controller { get; }
 
         string ActionName { get; }

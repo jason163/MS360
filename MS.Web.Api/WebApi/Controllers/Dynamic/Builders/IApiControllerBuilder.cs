@@ -43,7 +43,7 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
         /// </summary>
         /// <param name="methodName">代理类中的方法名</param>
         /// <returns></returns>
-        IApiControllerBuilder<T> ForMethod(string methodName);
+        IApiControllerActionBuilder<T> ForMethod(string methodName);
 
         IApiControllerBuilder<T> ForMethods(Action<IApiControllerActionBuilder> action);
 

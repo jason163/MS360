@@ -23,7 +23,7 @@ namespace MS.WebApi.Controllers.Dynamic
         public Type ServiceInterfaceType { get; private set; }
 
         /// <summary>
-        /// Controller 类型
+        /// Controller 类型 即 <see cref="DynamicApiController{T}"/>类型,其中的T就是具体的ApplicationService接口的类型
         /// </summary>
         public Type ApiControllerType { get; private set; }
 
