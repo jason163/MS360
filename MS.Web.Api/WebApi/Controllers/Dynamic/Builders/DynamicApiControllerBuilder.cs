@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,11 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
         public IApiControllerBuilder<T> For<T>(string serviceName)
         {
             return new ApiControllerBuilder<T>(serviceName, _iocResolver);
+        }
+
+        public IBatchApiControllerBuilder<T> ForAll<T>(Assembly assembly, string servicePrefix)
+        {
+            return new BatchApiControllerBuilder<T>(_iocResolver, this, assembly, servicePrefix);
         }
     }
 }
