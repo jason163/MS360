@@ -28,7 +28,7 @@ namespace MS.WebApi.Controllers.Dynamic
         public Type ApiControllerType { get; private set; }
 
         /// <summary>
-        /// 接口类型
+        /// 拦截器类型
         /// </summary>
         public Type InterceptorType { get; private set; }
 
@@ -51,12 +51,12 @@ namespace MS.WebApi.Controllers.Dynamic
         /// <summary>
         /// Creates a new <see cref="DynamicApiControllerInfo"/> instance.
         /// </summary>
-        /// <param name="serviceName">Name of the service</param>
-        /// <param name="serviceInterfaceType">Service interface type</param>
-        /// <param name="apiControllerType">Api Controller type</param>
-        /// <param name="interceptorType">Interceptor type</param>
-        /// <param name="filters">Filters</param>
-        /// <param name="isApiExplorerEnabled">Is API explorer enabled</param>
+        /// <param name="serviceName">服务名称</param>
+        /// <param name="serviceInterfaceType">服务接口类型</param>
+        /// <param name="apiControllerType">控制器类型</param>
+        /// <param name="interceptorType">拦截器类型</param>
+        /// <param name="filters">过滤器列表</param>
+        /// <param name="isApiExplorerEnabled">动态接口是否被探测</param>
         public DynamicApiControllerInfo(
             string serviceName,
             Type serviceInterfaceType,

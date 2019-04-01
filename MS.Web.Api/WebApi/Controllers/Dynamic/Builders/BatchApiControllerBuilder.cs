@@ -11,6 +11,10 @@ using MS.Extension;
 
 namespace MS.WebApi.Controllers.Dynamic.Builders
 {
+    /// <summary>
+    /// Controller 批量构建器
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BatchApiControllerBuilder<T> : IBatchApiControllerBuilder<T>
     {
         private readonly string _servicePrefix;

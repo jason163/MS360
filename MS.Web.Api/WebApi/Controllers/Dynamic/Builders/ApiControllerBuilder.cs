@@ -16,22 +16,22 @@ namespace MS.WebApi.Controllers.Dynamic.Builders
     public class ApiControllerBuilder<T> : IApiControllerBuilder<T>
     {
         /// <summary>
-        /// Name of the controller.
+        /// Controller 名称即服务名称
         /// </summary>
         public string ServiceName { get; }
 
         /// <summary>
-        /// Gets type of the service interface for this dynamic controller.
+        /// 服务接口类型
         /// </summary>
         public Type ServiceInterfaceType { get; }
 
         /// <summary>
-        /// Action Filters to apply to this dynamic controller.
+        /// 过滤列表
         /// </summary>
         public IFilter[] Filters { get; set; }
 
         /// <summary>
-        /// Is API Explorer enabled.
+        /// API 是否可探测
         /// </summary>
         public bool? IsApiExplorerEnabled { get; set; }
 

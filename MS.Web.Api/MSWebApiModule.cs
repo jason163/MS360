@@ -31,6 +31,7 @@ namespace MS.WebApi
 
             IocManager.Register<IDynamicApiControllerBuilder, DynamicApiControllerBuilder>();
             IocManager.Register<IMSWebApiConfiguration, MSWebApiConfiguration>();
+            
 
         }
 
@@ -50,6 +51,9 @@ namespace MS.WebApi
 
             foreach(var controllerInfo in IocManager.Resolve<DynamicApiControllerManager>().GetAll())
             {
+                //  通过Castle创建DynamicApiController<T>的代理类，为代理类动态添加ApplicationService接口
+                //  这里就是指T，也就是让代理类实现了接口T，这样通过代理类就可以访问接口T中定义的方法
+                //  同时为代理类添加拦截器
                 IocManager.IocContainer.Register(
                     Component.For(controllerInfo.InterceptorType).LifestyleTransient(),
                     Component.For(controllerInfo.ApiControllerType)
@@ -65,6 +69,10 @@ namespace MS.WebApi
             base.PostInitialize();
         }
 
+        /// <summary>
+        /// 使用自定义对象替换默认对象<see cref="IHttpControllerSelector"/> <see cref="IHttpActionSelector"/> <see cref="IHttpControllerActivator"/>
+        /// </summary>
+        /// <param name="httpConfiguration"></param>
         private void InitializeAspNetServices(HttpConfiguration httpConfiguration)
         {
             httpConfiguration.Services.Replace(typeof(IHttpControllerSelector), new MSHttpControllerSelector(httpConfiguration, IocManager.Resolve<DynamicApiControllerManager>()));
