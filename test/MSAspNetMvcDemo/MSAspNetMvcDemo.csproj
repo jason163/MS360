@@ -298,6 +298,10 @@
       <Project>{63ad91ad-0720-4583-acbf-c08cc8a1b96a}</Project>
       <Name>MS.Web.Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\MS.Web.Mvc\MS.Web.Mvc.csproj">
+      <Project>{8c468f0e-255e-44f8-9fe9-0d0f77704565}</Project>
+      <Name>MS.Web.Mvc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\MS\MS.csproj">
       <Project>{286f3d80-9bd2-4a38-a124-46d453362672}</Project>
       <Name>MS</Name>

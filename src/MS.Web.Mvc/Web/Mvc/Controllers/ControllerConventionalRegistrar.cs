@@ -16,7 +16,7 @@ namespace MS.Web.Mvc.Controllers
         {
             context.IocManager.IocContainer.Register(
                 Classes.FromAssembly(context.Assembly)
-                .BasedOn<Controller>()
+                .BasedOn<MSController>()
                 .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
                 .LifestyleTransient());
 

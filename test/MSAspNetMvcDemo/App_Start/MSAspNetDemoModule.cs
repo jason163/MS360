@@ -1,4 +1,5 @@
 ﻿using MS.Module;
+using MS.Web.Mvc;
 using MSDynamicWebApiDemo;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Web.Routing;
 
 namespace MSAspNetMvcDemo
 {
-    [DependsOn(dependedModuleTypes: typeof(MSDynamicWebApiDemoModule))]
+    [DependsOn(typeof(MSDynamicWebApiDemoModule),typeof(MSWebMvcModule))]
     public class MSAspNetDemoModule : MSModule
     {
         public override void Initialize()
