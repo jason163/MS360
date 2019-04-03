@@ -18,6 +18,7 @@ namespace MS.Web.Mvc
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly(),new Dependency.ConventionalRegistrationConfig());
 
+            // 使用自定义 ControllerFactory来创建Controller实例
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(IocManager));
         }
 
