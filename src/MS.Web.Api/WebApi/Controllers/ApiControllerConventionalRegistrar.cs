@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 
 namespace MS.WebApi.Controllers
 {
@@ -20,7 +21,7 @@ namespace MS.WebApi.Controllers
             context.IocManager.IocContainer.Register(
                 Classes.FromAssembly(context.Assembly)
                 .BasedOn<ApiController>()
-                .If(type => type.GetTypeInfo().IsGenericTypeDefinition)
+                .If(type => !type.GetTypeInfo().IsGenericTypeDefinition)
                 .LifestyleTransient());
         }
     }
