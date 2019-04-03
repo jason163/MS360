@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSAspNetMvcDemo", "test\MSA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDynamicWebApiDemo", "test\MSDynamicWebApiDemo\MSDynamicWebApiDemo.csproj", "{AD81A25C-C639-48CB-AD4C-A8BDCE13E877}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Web.Mvc", "src\MS.Web.Mvc\MS.Web.Mvc.csproj", "{8C468F0E-255E-44F8-9FE9-0D0F77704565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{AD81A25C-C639-48CB-AD4C-A8BDCE13E877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD81A25C-C639-48CB-AD4C-A8BDCE13E877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD81A25C-C639-48CB-AD4C-A8BDCE13E877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C468F0E-255E-44F8-9FE9-0D0F77704565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C468F0E-255E-44F8-9FE9-0D0F77704565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C468F0E-255E-44F8-9FE9-0D0F77704565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C468F0E-255E-44F8-9FE9-0D0F77704565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{34CE5080-CDF6-4CFA-9925-9E9D486B3CE1} = {85397689-988F-457F-BF8E-33972E554112}
 		{63E3599C-F1AE-45F4-8E91-9BA8BFA40DB6} = {C3B6728E-6DD9-4DB6-AE6E-3FB264B74018}
 		{AD81A25C-C639-48CB-AD4C-A8BDCE13E877} = {C3B6728E-6DD9-4DB6-AE6E-3FB264B74018}
+		{8C468F0E-255E-44F8-9FE9-0D0F77704565} = {85397689-988F-457F-BF8E-33972E554112}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {856DA000-E9EF-422E-A4B5-F32CB67142D1}
