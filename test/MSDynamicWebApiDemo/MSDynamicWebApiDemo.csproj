@@ -47,11 +47,11 @@
     <Compile Include="Service\IgnoreAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MS.Web.Api\MS.Web.Api.csproj">
-      <Project>{45cdd505-4b42-4943-b16e-3844b30014ce}</Project>
+    <ProjectReference Include="..\..\src\MS.Web.Api\MS.Web.Api.csproj">
+      <Project>{63ad91ad-0720-4583-acbf-c08cc8a1b96a}</Project>
       <Name>MS.Web.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\MS\MS.csproj">
+    <ProjectReference Include="..\..\src\MS\MS.csproj">
       <Project>{286f3d80-9bd2-4a38-a124-46d453362672}</Project>
       <Name>MS</Name>
     </ProjectReference>

@@ -64,9 +64,9 @@ namespace MS.WebApi
 
                 Logger.DebugFormat("Dynamic web api controller is created for type '{0}' with service name '{1}'.", controllerInfo.ServiceInterfaceType.FullName, controllerInfo.ServiceName);
             }
-            Configuration.Modules.MSWebApi().HttpConfiguration.EnsureInitialized();
 
-            base.PostInitialize();
+            Configuration.Modules.MSWebApi().HttpConfiguration.EnsureInitialized();
+            
         }
 
         /// <summary>

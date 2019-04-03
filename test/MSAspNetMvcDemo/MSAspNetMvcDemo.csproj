@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
@@ -288,13 +294,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\MS.Web.Api\MS.Web.Api.csproj">
+      <Project>{63ad91ad-0720-4583-acbf-c08cc8a1b96a}</Project>
+      <Name>MS.Web.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\MS\MS.csproj">
+      <Project>{286f3d80-9bd2-4a38-a124-46d453362672}</Project>
+      <Name>MS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MSDynamicWebApiDemo\MSDynamicWebApiDemo.csproj">
       <Project>{ad81a25c-c639-48cb-ad4c-a8bdce13e877}</Project>
       <Name>MSDynamicWebApiDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\MS\MS.csproj">
-      <Project>{286f3d80-9bd2-4a38-a124-46d453362672}</Project>
-      <Name>MS</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
