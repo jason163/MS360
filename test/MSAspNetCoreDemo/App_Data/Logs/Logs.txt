@@ -58,3 +58,18 @@ INFO  2019-03-21 16:43:09,540 [10   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2019-03-21 16:43:09,542 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
 INFO  2019-03-21 16:43:09,545 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 21344.4503ms
 INFO  2019-03-21 16:43:09,547 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21374.4023ms 200 text/plain; charset=utf-8
+DEBUG 2019-04-11 11:42:08,955 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 11:42:09,155 [1    ] MS.Module.MSModuleManager                - Found 3 ABP modules in total.
+DEBUG 2019-04-11 11:42:09,158 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 11:42:09,163 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 11:42:09,163 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 11:42:09,166 [1    ] MS.Module.MSModuleManager                - 3 modules loaded.
+INFO  2019-04-11 11:42:09,567 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 11:42:09,723 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 11:42:09,754 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 11:42:09,757 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.2724ms.
+INFO  2019-04-11 11:42:09,765 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 11:42:09,806 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 80.9096ms
+INFO  2019-04-11 11:42:09,815 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 249.1192ms 200 application/json; charset=utf-8
+INFO  2019-04-11 11:42:11,049 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/favicon.ico  
+INFO  2019-04-11 11:42:11,050 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8096ms 404 
