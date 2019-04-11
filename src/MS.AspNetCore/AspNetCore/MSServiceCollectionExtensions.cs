@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Text;
 using MS.AspNetCore.Mvc;
 using Castle.Windsor.MsDependencyInjection;
+using MS.AspNetCore.Mvc.Providers;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace MS.AspNetCore
 {
@@ -47,6 +49,10 @@ namespace MS.AspNetCore
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
             // 替换掉默认的视图组件构造类，改用 DI 框架负责视图组件的创建
             services.Replace(ServiceDescriptor.Singleton<IViewComponentActivator, ServiceBasedViewComponentActivator>());
+
+            //ApplicationService 成为 Controller 加入到 ApplicationPart.Controllers
+            var partManager = services.GetSingletonServiceOrNull<ApplicationPartManager>();
+            partManager?.FeatureProviders.Add(new MSAppServiceControllerFeatureProvider(resolver));
 
             // 可自定义协议解析器,继承DefaultContractResolver
             //services.Configure<MvcJsonOptions>(jsonOpts =>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using MS.AspNetCore.Mvc.Conventions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,7 @@ namespace MS.AspNetCore.Mvc
 
         private static void AddConventions(MvcOptions options, IServiceCollection services)
         {
+            options.Conventions.Add(new MSAppServiceConvention(services));
         }
     }
 }

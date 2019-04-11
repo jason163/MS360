@@ -73,3 +73,342 @@ INFO  2019-04-11 11:42:09,806 [7    ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2019-04-11 11:42:09,815 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 249.1192ms 200 application/json; charset=utf-8
 INFO  2019-04-11 11:42:11,049 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/favicon.ico  
 INFO  2019-04-11 11:42:11,050 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8096ms 404 
+DEBUG 2019-04-11 16:10:24,702 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 16:10:24,907 [1    ] MS.Module.MSModuleManager                - Found 3 ABP modules in total.
+DEBUG 2019-04-11 16:10:24,910 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:10:24,913 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:10:24,913 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:10:24,915 [1    ] MS.Module.MSModuleManager                - 3 modules loaded.
+FATAL 2019-04-11 16:10:25,001 [1    ] MS.MSBootStrapper                        - Castle.MicroKernel.ComponentNotFoundException: No component for supporting the service MS.AspNetCore.Configuration.IMSAspNetCoreConfiguration was found
+   at Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy, Boolean ignoreParentContext)
+   at Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at MS.Dependency.IocManager.Resolve[T]() in C:\Users\jason\source\repos\MS360\src\MS\Dependency\IocManager.cs:line 176
+   at MS.Configuration.Startup.MSStartupConfiguration.<Get>b__22_0[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.Configuration.DictionaryBasedConfig.GetOrCreate[T](String name, Func`1 creator) in C:\Users\jason\source\repos\MS360\src\MS\Configuration\DictionaryBasedConfig.cs:line 115
+   at MS.Configuration.Startup.MSStartupConfiguration.Get[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfigurationExtensions.MSAspNetCore(IModuleConfigurations configurations) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfigurationExtensions.cs:line 15
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 26
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+Castle.MicroKernel.ComponentNotFoundException: No component for supporting the service MS.AspNetCore.Configuration.IMSAspNetCoreConfiguration was found
+   at Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy, Boolean ignoreParentContext)
+   at Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at MS.Dependency.IocManager.Resolve[T]() in C:\Users\jason\source\repos\MS360\src\MS\Dependency\IocManager.cs:line 176
+   at MS.Configuration.Startup.MSStartupConfiguration.<Get>b__22_0[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.Configuration.DictionaryBasedConfig.GetOrCreate[T](String name, Func`1 creator) in C:\Users\jason\source\repos\MS360\src\MS\Configuration\DictionaryBasedConfig.cs:line 115
+   at MS.Configuration.Startup.MSStartupConfiguration.Get[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfigurationExtensions.MSAspNetCore(IModuleConfigurations configurations) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfigurationExtensions.cs:line 15
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 26
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+FATAL 2019-04-11 16:10:25,026 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+Castle.MicroKernel.ComponentNotFoundException: No component for supporting the service MS.AspNetCore.Configuration.IMSAspNetCoreConfiguration was found
+   at Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy, Boolean ignoreParentContext)
+   at Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at MS.Dependency.IocManager.Resolve[T]() in C:\Users\jason\source\repos\MS360\src\MS\Dependency\IocManager.cs:line 176
+   at MS.Configuration.Startup.MSStartupConfiguration.<Get>b__22_0[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.Configuration.DictionaryBasedConfig.GetOrCreate[T](String name, Func`1 creator) in C:\Users\jason\source\repos\MS360\src\MS\Configuration\DictionaryBasedConfig.cs:line 115
+   at MS.Configuration.Startup.MSStartupConfiguration.Get[T]() in C:\Users\jason\source\repos\MS360\src\MS\Configuration\Startup\MSStartupConfiguration.cs:line 48
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfigurationExtensions.MSAspNetCore(IModuleConfigurations configurations) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfigurationExtensions.cs:line 15
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 26
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+   at MS.AspNetCore.MSApplicationBuilderExtensions.InitializeMS(IApplicationBuilder app) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 56
+   at MS.AspNetCore.MSApplicationBuilderExtensions.UseMS(IApplicationBuilder app, Action`1 optionsAction) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 40
+   at MS.AspNetCore.MSApplicationBuilderExtensions.UseMS(IApplicationBuilder app) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 22
+   at MSAspNetCoreDemo.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\Startup.cs:line 53
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Internal.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+INFO  2019-04-11 16:10:25,335 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 16:10:25,363 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.3875ms 500 text/html; charset=utf-8
+DEBUG 2019-04-11 16:13:04,422 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 16:13:04,440 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 16:13:04,443 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:13:04,446 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:13:04,446 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:13:04,446 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:13:04,448 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+FATAL 2019-04-11 16:13:04,493 [1    ] MS.MSBootStrapper                        - System.NullReferenceException: Object reference not set to an instance of an object.
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfiguration.CreateControllersForAppServices(Assembly assembly, String moduleName, Boolean useConventionalHttpVerbs) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfiguration.cs:line 53
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 28
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfiguration.CreateControllersForAppServices(Assembly assembly, String moduleName, Boolean useConventionalHttpVerbs) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfiguration.cs:line 53
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 28
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+FATAL 2019-04-11 16:13:04,505 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MS.AspNetCore.Configuration.MSAspNetCoreConfiguration.CreateControllersForAppServices(Assembly assembly, String moduleName, Boolean useConventionalHttpVerbs) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\Configuration\MSAspNetCoreConfiguration.cs:line 53
+   at MSAspNetCoreDemo.MSAspNetCoreDemoModule.PreInitialize() in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\MSAspNetCoreDemoModule.cs:line 28
+   at MS.Module.MSModuleManager.<>c.<StartModules>b__14_0(MSModuleInfo module) in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at MS.Module.MSModuleManager.StartModules() in C:\Users\jason\source\repos\MS360\src\MS\Module\MSModuleManager.cs:line 55
+   at MS.MSBootStrapper.Initialize() in C:\Users\jason\source\repos\MS360\src\MS\MSBootStrapper.cs:line 98
+   at MS.AspNetCore.MSApplicationBuilderExtensions.InitializeMS(IApplicationBuilder app) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 56
+   at MS.AspNetCore.MSApplicationBuilderExtensions.UseMS(IApplicationBuilder app, Action`1 optionsAction) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 40
+   at MS.AspNetCore.MSApplicationBuilderExtensions.UseMS(IApplicationBuilder app) in C:\Users\jason\source\repos\MS360\src\MS.AspNetCore\AspNetCore\MSApplicationBuilderExtensions.cs:line 22
+   at MSAspNetCoreDemo.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in C:\Users\jason\source\repos\MS360\test\MSAspNetCoreDemo\Startup.cs:line 53
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Internal.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+INFO  2019-04-11 16:13:04,769 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 16:13:04,787 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.4308ms 500 text/html; charset=utf-8
+DEBUG 2019-04-11 16:18:40,994 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 16:18:41,015 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 16:18:41,018 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:18:41,021 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:18:41,021 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:18:41,021 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:18:41,023 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 16:18:41,524 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 16:18:41,679 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 16:18:41,709 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 16:18:41,711 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1854ms.
+INFO  2019-04-11 16:18:41,719 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 16:18:41,765 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 83.2312ms
+INFO  2019-04-11 16:18:41,772 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 249.9253ms 200 application/json; charset=utf-8
+INFO  2019-04-11 16:18:53,079 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://127.0.0.1:20923/iisintegration  0
+INFO  2019-04-11 16:18:53,082 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0702ms 202 
+DEBUG 2019-04-11 16:18:53,121 [8    ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-11 16:18:53,122 [8    ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-11 16:20:54,801 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 16:20:54,835 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 16:20:54,838 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:20:54,841 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:20:54,841 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:20:54,842 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:20:54,844 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 16:21:08,711 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 16:21:08,711 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 16:21:08,758 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 44.6498ms 200 
+INFO  2019-04-11 16:21:46,882 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 16:21:46,977 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 16:21:46,982 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.5723ms.
+INFO  2019-04-11 16:21:46,991 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 16:21:47,028 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 141.7562ms
+INFO  2019-04-11 16:21:47,039 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 38333.7727ms 200 application/json; charset=utf-8
+DEBUG 2019-04-11 16:25:58,744 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 16:25:58,791 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 16:25:58,795 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:25:58,798 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:25:58,798 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:25:58,798 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 16:25:58,801 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 16:29:10,332 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 16:29:10,333 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 16:29:10,392 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.9772ms 200 
+INFO  2019-04-11 16:30:31,938 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 16:30:32,028 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 16:30:32,032 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4801ms.
+INFO  2019-04-11 16:30:32,042 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 16:30:32,077 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 134.4949ms
+INFO  2019-04-11 16:30:32,090 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 81763.3838ms 200 application/json; charset=utf-8
+DEBUG 2019-04-11 17:34:48,589 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 17:34:48,619 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 17:34:48,622 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:34:48,624 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:34:48,624 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:34:48,625 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:34:48,627 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 17:35:10,280 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:35:10,280 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 17:35:10,326 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.784ms 200 
+DEBUG 2019-04-11 17:52:06,780 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 17:52:06,806 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 17:52:06,809 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:52:06,812 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:52:06,812 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:52:06,812 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:52:06,814 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 17:52:09,145 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 17:52:09,145 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:52:09,191 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.9152ms 200 
+INFO  2019-04-11 17:52:33,694 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:52:33,780 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:52:33,784 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4727ms.
+INFO  2019-04-11 17:52:33,793 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:52:33,847 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 144.5665ms
+INFO  2019-04-11 17:52:33,857 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24717.768ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:52:59,749 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/FooService/do  
+INFO  2019-04-11 17:52:59,752 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.8685ms 404 
+INFO  2019-04-11 17:53:05,669 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/Foo/do  
+INFO  2019-04-11 17:53:05,671 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0606ms 404 
+INFO  2019-04-11 17:53:15,083 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/foo/do  
+INFO  2019-04-11 17:53:15,086 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.159ms 404 
+DEBUG 2019-04-11 17:54:38,309 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 17:54:38,337 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 17:54:38,340 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:54:38,342 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:54:38,343 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:54:38,343 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:54:38,345 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 17:54:38,739 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 17:54:38,739 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:54:38,781 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 38.7726ms 200 
+INFO  2019-04-11 17:55:22,951 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:55:23,037 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:55:23,042 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3652ms.
+INFO  2019-04-11 17:55:23,051 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:55:23,084 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 128.0915ms
+INFO  2019-04-11 17:55:23,096 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 44360.6936ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:55:53,793 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:53776/api/services/app/FooService/Do  0
+INFO  2019-04-11 17:55:53,811 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Do", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Do (MSAspNetCoreDemo)
+INFO  2019-04-11 17:55:53,912 [8    ] idateAntiforgeryTokenAuthorizationFilter - Antiforgery token validation failed. The required antiforgery cookie ".AspNetCore.Antiforgery.YqJd9NGNOZA" is not present.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AspNetCore.Antiforgery.YqJd9NGNOZA" is not present.
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+INFO  2019-04-11 17:55:53,916 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter'.
+INFO  2019-04-11 17:55:53,921 [8    ] icrosoft.AspNetCore.Mvc.StatusCodeResult - Executing HttpStatusCodeResult, setting HTTP status code 400
+INFO  2019-04-11 17:55:53,923 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Do (MSAspNetCoreDemo) in 110.0714ms
+INFO  2019-04-11 17:55:53,926 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 134.3214ms 400 
+DEBUG 2019-04-11 17:57:02,254 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 17:57:02,281 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 17:57:02,284 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:57:02,287 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:57:02,288 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:57:02,288 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 17:57:02,290 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 17:57:02,766 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:57:02,766 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:53776/  0
+INFO  2019-04-11 17:57:02,797 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.4249ms 200 
+INFO  2019-04-11 17:57:08,385 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:57:08,467 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:57:08,471 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4568ms.
+INFO  2019-04-11 17:57:08,479 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:57:08,511 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 122.071ms
+INFO  2019-04-11 17:57:08,520 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5761.0018ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:57:11,148 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/FooService/Do  0
+INFO  2019-04-11 17:57:11,152 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9007ms 404 
+INFO  2019-04-11 17:57:47,647 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/FooService/Do  
+INFO  2019-04-11 17:57:47,649 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.8108ms 404 
+INFO  2019-04-11 17:57:51,317 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/FooService/Do  
+INFO  2019-04-11 17:57:51,319 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.6378ms 404 
+INFO  2019-04-11 17:58:03,952 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:03,955 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:03,973 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:03,975 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0676ms.
+INFO  2019-04-11 17:58:03,977 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:03,979 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 22.3106ms
+INFO  2019-04-11 17:58:03,981 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.9996ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:04,990 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:04,992 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:05,011 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:05,013 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0108ms.
+INFO  2019-04-11 17:58:05,015 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:05,017 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 23.5889ms
+INFO  2019-04-11 17:58:05,019 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.5162ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:05,820 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:05,821 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:05,840 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:05,842 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0108ms.
+INFO  2019-04-11 17:58:05,845 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:05,847 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 23.7852ms
+INFO  2019-04-11 17:58:05,871 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.5964ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:06,425 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:06,427 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:06,445 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:06,448 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0102ms.
+INFO  2019-04-11 17:58:06,450 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:06,452 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 22.7566ms
+INFO  2019-04-11 17:58:06,454 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.2874ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:06,589 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:06,591 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:06,609 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:06,611 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0073ms.
+INFO  2019-04-11 17:58:06,614 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:06,617 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 23.3176ms
+INFO  2019-04-11 17:58:06,627 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.6752ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:06,773 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:06,775 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:06,792 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:06,794 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0102ms.
+INFO  2019-04-11 17:58:06,797 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:06,799 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 22.1047ms
+INFO  2019-04-11 17:58:06,802 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.5303ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:06,958 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:06,960 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:06,978 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:06,981 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.029ms.
+INFO  2019-04-11 17:58:06,983 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:06,985 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 22.8351ms
+INFO  2019-04-11 17:58:06,988 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.2124ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:07,126 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:07,128 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:07,146 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:07,148 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0102ms.
+INFO  2019-04-11 17:58:07,150 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:07,152 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 21.8163ms
+INFO  2019-04-11 17:58:07,154 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.1099ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:07,293 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:07,296 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:07,316 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 17:58:07,318 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0079ms.
+INFO  2019-04-11 17:58:07,320 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 17:58:07,322 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 23.6862ms
+INFO  2019-04-11 17:58:07,325 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.2581ms 200 application/json; charset=utf-8
+INFO  2019-04-11 17:58:09,239 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/services/app/FooService/Do  
+INFO  2019-04-11 17:58:09,241 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1417ms 404 
+INFO  2019-04-11 17:58:37,031 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:53776/api/values  
+INFO  2019-04-11 17:58:37,033 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 17:58:37,050 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+DEBUG 2019-04-11 18:07:22,297 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-11 18:07:22,324 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-11 18:07:22,327 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 18:07:22,330 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 18:07:22,330 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 18:07:22,330 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-11 18:07:22,332 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-11 18:07:23,276 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-11 18:08:38,882 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 18:08:38,966 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 18:08:42,041 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3070.4722ms.
+INFO  2019-04-11 18:08:42,053 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-11 18:08:42,087 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 3201.0919ms
+INFO  2019-04-11 18:08:42,097 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78825.7692ms 200 application/json; charset=utf-8
+INFO  2019-04-11 18:08:56,118 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  0
+INFO  2019-04-11 18:08:56,121 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 18:08:56,137 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 18:08:56,139 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.2303ms.
+INFO  2019-04-11 18:08:56,141 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-11 18:08:56,143 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 20.3269ms
+INFO  2019-04-11 18:08:56,146 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.5296ms 200 text/plain; charset=utf-8
+INFO  2019-04-11 18:09:09,088 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  
+INFO  2019-04-11 18:09:09,092 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 18:09:09,110 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 18:09:09,113 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0068ms.
+INFO  2019-04-11 18:09:09,115 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-11 18:09:09,117 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 23.1384ms
+INFO  2019-04-11 18:09:09,121 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 32.5825ms 200 text/plain; charset=utf-8
+INFO  2019-04-11 18:09:26,561 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  
+INFO  2019-04-11 18:09:26,563 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-11 18:09:26,579 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-11 18:09:29,327 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2746.3006ms.
+INFO  2019-04-11 18:09:29,329 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-11 18:09:29,331 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 2765.4272ms
+INFO  2019-04-11 18:09:29,334 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2770.8959ms 200 text/plain; charset=utf-8
+INFO  2019-04-11 18:09:29,452 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+INFO  2019-04-11 18:09:29,457 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.572ms 404 

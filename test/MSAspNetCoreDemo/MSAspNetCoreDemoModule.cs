@@ -1,4 +1,8 @@
-﻿using MS.Configuration.Startup;
+﻿
+using Microsoft.AspNetCore.Builder;
+using MS.AspNetCore;
+using MS.AspNetCore.Configuration;
+using MS.Configuration.Startup;
 using MS.DataAccess;
 using MS.Module;
 using System;
@@ -10,7 +14,8 @@ using System.Threading.Tasks;
 namespace MSAspNetCoreDemo
 {
     [DependsOn(
-        typeof(MSDataAccessModule)
+        typeof(MSDataAccessModule),
+        typeof(MSAspNetCoreModule)
         )]
     public class MSAspNetCoreDemoModule : MSModule
     {
@@ -19,7 +24,15 @@ namespace MSAspNetCoreDemo
             // 设置MSDataAccess的配置信息
              Configuration.Modules.MSDataAccess().ConfigPath = @"Configuration\Data";
 
-            base.PreInitialize();
+            // 为AppServices创建Controller
+            Configuration.Modules.MSAspNetCore()
+                .CreateControllersForAppServices(typeof(MSAspNetCoreDemoModule).GetTypeInfo().Assembly);
+
+            Configuration.Modules.MSAspNetCore().RouteConfiguration.Add(routes => {
+                routes.MapRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
+            });
         }
 
         public override void Initialize()
