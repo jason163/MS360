@@ -18,7 +18,7 @@ using Castle.Windsor.MsDependencyInjection;
 namespace MS.AspNetCore.Mvc.Conventions
 {
     /// <summary>
-    /// 自定义ApplicationModel
+    /// 自定义ApplicationModel;对服务类进行路由，Filter等应用
     /// </summary>
     public class MSAppServiceConvention : IApplicationModelConvention
     {
@@ -49,15 +49,15 @@ namespace MS.AspNetCore.Mvc.Conventions
                     configuration?.ControllerModelConfigurer(controller);
 
                     ConfigureArea(controller, configuration);
-                    ConfigureRemoteService(controller, configuration);
+                    ConfigureAppService(controller, configuration);
                 }
                 else
                 {
-                    var remoteServiceAtt = ReflectionHelper.GetSingleAttributeOrDefault<RemoteServiceAttribute>(type.GetTypeInfo());
-                    if (remoteServiceAtt != null )
-                    {
-                        ConfigureRemoteService(controller, configuration);
-                    }
+                    //var remoteServiceAtt = ReflectionHelper.GetSingleAttributeOrDefault<RemoteServiceAttribute>(type.GetTypeInfo());
+                    //if (remoteServiceAtt != null )
+                    //{
+                    //    ConfigureAppService(controller, configuration);
+                    //}
                 }
             }
         }
@@ -85,7 +85,7 @@ namespace MS.AspNetCore.Mvc.Conventions
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="configuration"></param>
-        private void ConfigureRemoteService(ControllerModel controller,[CanBeNull]MSControllerAssemblySetting configuration)
+        private void ConfigureAppService(ControllerModel controller,[CanBeNull]MSControllerAssemblySetting configuration)
         {
             ConfigureApiExplorer(controller);
             ConfigureSelector(controller, configuration);
@@ -151,12 +151,13 @@ namespace MS.AspNetCore.Mvc.Conventions
         /// <param name="controller"></param>
         private void ConfigureApiExplorer(ControllerModel controller)
         {
+            // 如果这里赋值GroupName时，Swagger不会显示当前Controller信息
             if (string.IsNullOrEmpty(controller.ApiExplorer.GroupName))
             {
                 controller.ApiExplorer.GroupName = controller.ControllerName;
             }
-            
-            if(controller.ApiExplorer.IsVisible == null)
+
+            if (!controller.ApiExplorer.IsVisible.HasValue)
             {
                 controller.ApiExplorer.IsVisible = true;
                 // 暂不处理RemoteService
@@ -180,7 +181,7 @@ namespace MS.AspNetCore.Mvc.Conventions
 
         private void ConfigureApiExplorer(ActionModel action)
         {
-            if(action.ApiExplorer.IsVisible == null)
+            if(!action.ApiExplorer.IsVisible.HasValue)
             {
                 action.ApiExplorer.IsVisible = true;
 
@@ -218,6 +219,8 @@ namespace MS.AspNetCore.Mvc.Conventions
             //{
             //    return;
             //}
+            // 可以增加装载过滤器
+            // action.Filters.Add()
 
             if (!action.Selectors.Any())
             {

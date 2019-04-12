@@ -40,7 +40,12 @@ namespace MSAspNetCoreDemo
             
             // Add Swagger info
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new Info {  Title="API",Version="v1" });
+
+                c.SwaggerDoc("v1", new Info {  Title="API",Version="v1",Contact=new Contact { Name="",Url=""} });
+
+                c.SwaggerDoc("FooService", new Info { Title = "FooService API", Version = "FooService" });
+
+
                 var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
                 var xmlPath = Path.Combine(basePath, "MSAspNetCoreDemo.xml");
                 c.IncludeXmlComments(xmlPath);
@@ -68,10 +73,13 @@ namespace MSAspNetCoreDemo
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
+            app.UseSwagger(c=> {
+                c.RouteTemplate = "/swagger/{documentName}/swagger.json";
+            });
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/FooService/swagger.json", "FooService");
             });
 
             app.UseMvc();

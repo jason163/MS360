@@ -13,6 +13,7 @@ using System.Linq;
 namespace MS.AspNetCore.Mvc.Providers
 {
     /// <summary>
+    /// 把服务类提供为Controller
     /// 继承<see cref="ControllerFactoryProvider"/>会从ApplicationPart发现Controller, 使 <see cref="ApplicationService"/> 成为Controller
     /// 只要继承<see cref="IApplicationService"/>接口就会自动成为Controller
     /// </summary>

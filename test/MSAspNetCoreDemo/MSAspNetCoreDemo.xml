@@ -4,6 +4,42 @@
         <name>MSAspNetCoreDemo</name>
     </assembly>
     <members>
+        <member name="T:MSAspNetCoreDemo.AppService.IFooService">
+            <summary>
+            FooService
+            </summary>
+        </member>
+        <member name="M:MSAspNetCoreDemo.AppService.IFooService.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MSAspNetCoreDemo.AppService.IFooService.GetString(System.Int32)">
+            <summary>
+            GetString
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MSAspNetCoreDemo.AppService.FooService">
+            <summary>
+            FooService
+            </summary>
+        </member>
+        <member name="M:MSAspNetCoreDemo.AppService.FooService.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MSAspNetCoreDemo.AppService.FooService.GetString(System.Int32)">
+            <summary>
+            GetString
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
         <member name="T:MSAspNetCoreDemo.Controllers.ValuesController">
             <summary>
             

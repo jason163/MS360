@@ -561,3 +561,261 @@ INFO  2019-04-12 13:52:06,199 [14   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2019-04-12 13:52:06,199 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6049ms 200 application/json; charset=utf-8
 DEBUG 2019-04-12 13:52:41,070 [13   ] MS.Module.MSModuleManager                - Shutting down has been started
 DEBUG 2019-04-12 13:52:41,071 [13   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 13:58:37,347 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 13:58:37,364 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 13:58:37,367 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 13:58:37,369 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 13:58:37,370 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 13:58:37,370 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 13:58:37,372 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 13:58:38,097 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 13:58:38,255 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 13:58:38,274 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 13:58:38,276 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1661ms.
+INFO  2019-04-12 13:58:38,282 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 13:58:38,329 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 71.722ms
+INFO  2019-04-12 13:58:38,337 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 242.2163ms 200 application/json; charset=utf-8
+INFO  2019-04-12 13:58:42,514 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 13:58:42,550 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.9714ms 200 text/html
+INFO  2019-04-12 13:58:43,009 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 13:58:43,016 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+INFO  2019-04-12 13:58:43,023 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2019-04-12 13:58:43,023 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.0377ms 200 image/png
+INFO  2019-04-12 13:58:43,111 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 101.9061ms 200 application/json;charset=utf-8
+INFO  2019-04-12 13:58:46,826 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 13:58:46,829 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3967ms 200 text/html
+INFO  2019-04-12 13:58:46,851 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js  
+INFO  2019-04-12 13:58:46,851 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css  
+INFO  2019-04-12 13:58:46,852 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-04-12 13:58:46,865 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-04-12 13:58:46,865 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-04-12 13:58:46,870 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-04-12 13:58:46,874 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23.0781ms 200 text/css
+INFO  2019-04-12 13:58:46,874 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.1849ms 200 application/javascript
+INFO  2019-04-12 13:58:46,874 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23.098ms 200 application/javascript
+INFO  2019-04-12 13:58:47,275 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 13:58:47,276 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4364ms 200 application/json;charset=utf-8
+INFO  2019-04-12 13:58:47,292 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+INFO  2019-04-12 13:58:47,293 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2019-04-12 13:58:47,293 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8203ms 200 image/png
+DEBUG 2019-04-12 14:29:52,950 [45   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 14:29:52,950 [45   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 14:52:10,390 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 14:52:10,409 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 14:52:10,416 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 14:52:10,419 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 14:52:10,419 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 14:52:10,420 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 14:52:10,421 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 14:52:11,136 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 14:52:11,298 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 14:52:11,317 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 14:52:11,319 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1683ms.
+INFO  2019-04-12 14:52:11,325 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 14:52:11,362 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 61.9571ms
+INFO  2019-04-12 14:52:11,368 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 234.4862ms 200 application/json; charset=utf-8
+INFO  2019-04-12 14:52:18,173 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 14:52:18,282 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 109.5605ms 200 application/json;charset=utf-8
+INFO  2019-04-12 14:52:38,786 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 14:52:38,813 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.582ms 200 text/html
+INFO  2019-04-12 14:52:39,004 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 14:52:39,005 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2049ms 200 application/json;charset=utf-8
+INFO  2019-04-12 14:52:48,703 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 14:52:48,705 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8659ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 15:09:06,163 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:09:06,181 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:09:06,184 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:09:06,186 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:09:06,187 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:09:06,187 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:09:06,189 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:09:07,044 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:09:07,219 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:09:07,238 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:09:07,240 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1655ms.
+INFO  2019-04-12 15:09:07,246 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:09:07,277 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 56.7005ms
+INFO  2019-04-12 15:09:07,284 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 243.9161ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:09:11,786 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:09:11,842 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 56.5498ms 200 text/html
+INFO  2019-04-12 15:09:11,867 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css  
+INFO  2019-04-12 15:09:11,869 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js  
+INFO  2019-04-12 15:09:11,869 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-04-12 15:09:11,893 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-04-12 15:09:11,894 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-04-12 15:09:11,899 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.2961ms 200 application/javascript
+INFO  2019-04-12 15:09:11,899 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.9214ms 200 text/css
+INFO  2019-04-12 15:09:11,909 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-04-12 15:09:11,909 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 40.337ms 200 application/javascript
+INFO  2019-04-12 15:09:12,378 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:09:12,390 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+INFO  2019-04-12 15:09:12,392 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2019-04-12 15:09:12,392 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9808ms 200 image/png
+INFO  2019-04-12 15:09:12,503 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 125.0104ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 15:09:18,019 [8    ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 15:09:18,020 [8    ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 15:21:10,131 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:21:10,158 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:21:10,161 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:21:10,164 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:21:10,164 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:21:10,164 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:21:10,166 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:21:11,137 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:23:51,016 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:23:51,107 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:23:53,851 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2737.9886ms.
+INFO  2019-04-12 15:23:53,861 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:23:53,898 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 2878.3988ms
+INFO  2019-04-12 15:23:53,910 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 162779.9288ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:24:03,047 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  
+INFO  2019-04-12 15:24:03,050 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:24:03,068 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:24:06,411 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3341.1745ms.
+INFO  2019-04-12 15:24:06,413 [12   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-12 15:24:06,416 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 3363.9192ms
+INFO  2019-04-12 15:24:06,419 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3370.7299ms 200 text/plain; charset=utf-8
+INFO  2019-04-12 15:24:17,544 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  
+INFO  2019-04-12 15:24:17,556 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:24:17,575 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:24:17,577 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0056ms.
+INFO  2019-04-12 15:24:17,578 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-12 15:24:17,580 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 22.045ms
+INFO  2019-04-12 15:24:17,582 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 38.293ms 200 text/plain; charset=utf-8
+INFO  2019-04-12 15:24:27,206 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:24:27,257 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.9764ms 200 text/html
+INFO  2019-04-12 15:24:27,834 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:24:27,959 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 134.293ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 15:24:59,792 [13   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 15:24:59,792 [13   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 15:31:22,369 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:31:22,395 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:31:22,398 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:31:22,401 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:31:22,402 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:31:22,402 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:31:22,404 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:31:23,383 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:35:07,399 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:35:07,509 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:35:08,909 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1395.9135ms.
+INFO  2019-04-12 15:35:08,918 [15   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:35:08,955 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 1550.4334ms
+INFO  2019-04-12 15:35:08,965 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 225583.8675ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:35:16,734 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:35:16,782 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.9345ms 200 text/html
+INFO  2019-04-12 15:35:16,980 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:35:17,023 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 43.8653ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 15:36:12,945 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:36:12,973 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:36:12,976 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:36:12,978 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:36:12,978 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:36:12,979 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:36:12,980 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:36:14,068 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:37:14,020 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "Values"}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:37:14,109 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:37:15,632 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1514.3317ms.
+INFO  2019-04-12 15:37:15,651 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:37:15,687 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 1663.2303ms
+INFO  2019-04-12 15:37:15,701 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 61633.5321ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:37:22,257 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:37:22,314 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.0396ms 200 text/html
+INFO  2019-04-12 15:37:22,526 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:37:22,667 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 140.3846ms 200 application/json;charset=utf-8
+INFO  2019-04-12 15:37:36,562 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/services/app/FooService/Get  
+INFO  2019-04-12 15:37:36,567 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "FooService"}. Executing action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:37:36,591 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:37:36,594 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1934ms.
+INFO  2019-04-12 15:37:36,597 [17   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+INFO  2019-04-12 15:37:36,602 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.AppService.FooService.Get (MSAspNetCoreDemo) in 30.7637ms
+INFO  2019-04-12 15:37:36,613 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 43.6002ms 200 text/plain; charset=utf-8
+DEBUG 2019-04-12 15:37:45,398 [14   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 15:37:45,398 [14   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 15:39:28,999 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:39:29,026 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:39:29,029 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:39:29,032 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:39:29,032 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:39:29,032 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:39:29,034 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:39:30,287 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:40:04,661 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:40:04,745 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:40:06,079 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1329.44ms.
+INFO  2019-04-12 15:40:06,089 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:40:06,126 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 1460.929ms
+INFO  2019-04-12 15:40:06,135 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35850.4294ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:40:11,960 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:40:11,998 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 40.0059ms 200 text/html
+INFO  2019-04-12 15:40:12,212 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:40:12,350 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 137.7074ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 15:40:21,893 [20   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 15:40:21,893 [20   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 15:45:04,291 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 15:45:04,320 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 15:45:04,323 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:45:04,326 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:45:04,326 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:45:04,327 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 15:45:04,328 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 15:45:05,777 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 15:45:12,630 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 15:45:12,718 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 15:45:14,262 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1538.8542ms.
+INFO  2019-04-12 15:45:14,277 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 15:45:14,326 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 1690.8391ms
+INFO  2019-04-12 15:45:14,340 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8565.0811ms 200 application/json; charset=utf-8
+INFO  2019-04-12 15:45:24,177 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 15:45:24,225 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.2319ms 200 text/html
+INFO  2019-04-12 15:45:24,427 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 15:45:24,557 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 129.5905ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 16:02:21,219 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 16:02:21,247 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 16:02:21,251 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:02:21,253 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:02:21,254 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:02:21,254 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:02:21,256 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 16:02:22,375 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 16:02:22,675 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 16:02:22,774 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 16:02:25,953 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3174.2033ms.
+INFO  2019-04-12 16:02:25,962 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 16:02:26,001 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 3321.9443ms
+INFO  2019-04-12 16:02:26,011 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3640.4424ms 200 application/json; charset=utf-8
+INFO  2019-04-12 16:02:33,114 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 16:02:33,174 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 59.834ms 200 text/html
+INFO  2019-04-12 16:02:33,384 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 16:02:33,506 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 122.4066ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 16:02:45,475 [13   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 16:02:45,476 [13   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-12 16:04:27,564 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-12 16:04:27,591 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-12 16:04:27,595 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:04:27,597 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:04:27,598 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:04:27,598 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-12 16:04:27,600 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-12 16:04:28,521 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-12 16:04:28,817 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-12 16:04:28,916 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-12 16:04:28,921 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3629ms.
+INFO  2019-04-12 16:04:28,934 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-12 16:04:28,974 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 152.3045ms
+INFO  2019-04-12 16:04:28,986 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 471.8317ms 200 application/json; charset=utf-8
+INFO  2019-04-12 16:04:31,991 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+INFO  2019-04-12 16:04:32,042 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.5515ms 200 text/html
+INFO  2019-04-12 16:04:33,022 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 16:04:33,163 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 140.7425ms 200 application/json;charset=utf-8
+INFO  2019-04-12 16:04:35,915 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/FooService/swagger.json  
+INFO  2019-04-12 16:04:35,921 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.4446ms 200 application/json;charset=utf-8
+INFO  2019-04-12 16:04:43,897 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+INFO  2019-04-12 16:04:43,901 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.3566ms 200 application/json;charset=utf-8
+INFO  2019-04-12 16:04:47,930 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/FooService/swagger.json  
+INFO  2019-04-12 16:04:47,936 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.749ms 200 application/json;charset=utf-8
+INFO  2019-04-12 16:04:54,051 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/swagger/FooService/swagger.json  
+INFO  2019-04-12 16:04:54,060 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6248ms 200 application/json;charset=utf-8
+DEBUG 2019-04-12 16:04:59,733 [12   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-12 16:04:59,734 [12   ] MS.Module.MSModuleManager                - Shutting down completed.
