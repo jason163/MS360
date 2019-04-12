@@ -152,6 +152,7 @@ namespace MS.AspNetCore.Mvc.Conventions
         private void ConfigureApiExplorer(ControllerModel controller)
         {
             // 如果这里赋值GroupName时，Swagger不会显示当前Controller信息
+            // 如果需要分组Swagger需要为GroupName增加SwaggerEndpoint
             if (string.IsNullOrEmpty(controller.ApiExplorer.GroupName))
             {
                 controller.ApiExplorer.GroupName = controller.ControllerName;
