@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MSAspNetCoreDemo</name>
+    </assembly>
+    <members>
+        <member name="T:MSAspNetCoreDemo.Controllers.ValuesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MSAspNetCoreDemo.Controllers.ValuesController.Get">
+            <summary>
+             GET api/values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.SysNo">
+            <summary>
+            系统编号,需初始化一条admin
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.EmployeeSysNo">
+            <summary>
+            对应的员工编号
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.UserID">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.Cell">
+            <summary>
+            座机
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.Note">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MSAspNetCoreDemo.Controllers.Channel.IsMaster">
+            <summary>
+            是否是默认的超级管理员
+            </summary>
+        </member>
+    </members>
+</doc>

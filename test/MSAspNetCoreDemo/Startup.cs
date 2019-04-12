@@ -10,7 +10,9 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using MS.AspNetCore;
 using MS.Castle.Logging.Log4Net;
 using MS.Dependency;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.IO;
 
 namespace MSAspNetCoreDemo
 {
@@ -35,6 +37,15 @@ namespace MSAspNetCoreDemo
             {
                 options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
             });
+            
+            // Add Swagger info
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info {  Title="API",Version="v1" });
+                var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+                var xmlPath = Path.Combine(basePath, "MSAspNetCoreDemo.xml");
+                c.IncludeXmlComments(xmlPath);
+            });
+
 
             return services.AddMS<MSAspNetCoreDemoModule>(options => {
             options.IocManager.IocContainer.AddFacility<LoggingFacility>(
@@ -56,6 +67,12 @@ namespace MSAspNetCoreDemo
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc();
         }

@@ -9,6 +9,9 @@ using MS.Dependency;
 
 namespace MSAspNetCoreDemo.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : MSController
@@ -20,7 +23,10 @@ namespace MSAspNetCoreDemo.Controllers
             this.cmd = dataCommand;
         }
 
-        // GET api/values
+        /// <summary>
+        ///  GET api/values
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
