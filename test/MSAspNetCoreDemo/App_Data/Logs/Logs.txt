@@ -819,3 +819,19 @@ INFO  2019-04-12 16:04:54,051 [15   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2019-04-12 16:04:54,060 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6248ms 200 application/json;charset=utf-8
 DEBUG 2019-04-12 16:04:59,733 [12   ] MS.Module.MSModuleManager                - Shutting down has been started
 DEBUG 2019-04-12 16:04:59,734 [12   ] MS.Module.MSModuleManager                - Shutting down completed.
+DEBUG 2019-04-15 15:21:51,729 [1    ] MS.Module.MSModuleManager                - Loading Abp modules...
+DEBUG 2019-04-15 15:21:51,748 [1    ] MS.Module.MSModuleManager                - Found 4 ABP modules in total.
+DEBUG 2019-04-15 15:21:51,751 [1    ] MS.Module.MSModuleManager                - Loaded module: MSAspNetCoreDemo.MSAspNetCoreDemoModule, MSAspNetCoreDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-15 15:21:51,753 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.DataAccess.MSDataAccessModule, MS.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-15 15:21:51,753 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.MSKernelModule, MS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-15 15:21:51,753 [1    ] MS.Module.MSModuleManager                - Loaded module: MS.AspNetCore.MSAspNetCoreModule, MS.AspNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-15 15:21:51,755 [1    ] MS.Module.MSModuleManager                - 4 modules loaded.
+INFO  2019-04-15 15:21:52,447 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+INFO  2019-04-15 15:21:52,646 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values", area = ""}. Executing action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo)
+INFO  2019-04-15 15:21:52,668 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) - Validation state: Valid
+INFO  2019-04-15 15:21:52,669 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1371ms.
+INFO  2019-04-15 15:21:52,675 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+INFO  2019-04-15 15:21:52,714 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action MSAspNetCoreDemo.Controllers.ValuesController.Get (MSAspNetCoreDemo) in 66.3785ms
+INFO  2019-04-15 15:21:52,723 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 278.8226ms 200 application/json; charset=utf-8
+DEBUG 2019-04-15 15:21:58,006 [11   ] MS.Module.MSModuleManager                - Shutting down has been started
+DEBUG 2019-04-15 15:21:58,007 [11   ] MS.Module.MSModuleManager                - Shutting down completed.

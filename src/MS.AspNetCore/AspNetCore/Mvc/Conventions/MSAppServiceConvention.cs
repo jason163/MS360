@@ -35,7 +35,10 @@ namespace MS.AspNetCore.Mvc.Conventions
             }, true);
         }
 
-
+        /// <summary>
+        ///  此方法被系统调用，引协议给ApplicationModel使用
+        /// </summary>
+        /// <param name="application"></param>
         public void Apply(ApplicationModel application)
         {
             foreach(var controller in application.Controllers)
@@ -151,8 +154,8 @@ namespace MS.AspNetCore.Mvc.Conventions
         /// <param name="controller"></param>
         private void ConfigureApiExplorer(ControllerModel controller)
         {
-            // 如果这里赋值GroupName时，Swagger不会显示当前Controller信息
-            // 如果需要分组Swagger需要为GroupName增加SwaggerEndpoint
+            // 如果这里赋值GroupName时，Swagger不会显示当前Controller信息,因为默认Controller分组为NULL
+            // 如果需要分组Swagger并能在Swagger上显示，需要为GroupName增加SwaggerEndpoint
             if (string.IsNullOrEmpty(controller.ApiExplorer.GroupName))
             {
                 controller.ApiExplorer.GroupName = controller.ControllerName;
@@ -222,6 +225,7 @@ namespace MS.AspNetCore.Mvc.Conventions
             //}
             // 可以增加装载过滤器
             // action.Filters.Add()
+            
 
             if (!action.Selectors.Any())
             {

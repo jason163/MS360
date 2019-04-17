@@ -54,6 +54,9 @@ namespace MS.AspNetCore
             var partManager = services.GetSingletonServiceOrNull<ApplicationPartManager>();
             partManager?.FeatureProviders.Add(new MSAppServiceControllerFeatureProvider(resolver));
 
+            // 替换默认的IActionDescriptorChangeProvider,使用ActionDescriptor缓存失效
+            services.Replace(ServiceDescriptor.Singleton<IActionDescriptorChangeProvider, MSActionDescriptorChangeProvider>());
+
             // 可自定义协议解析器,继承DefaultContractResolver
             //services.Configure<MvcJsonOptions>(jsonOpts =>
             //{
