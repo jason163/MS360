@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using MS.Dependency;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,22 +11,39 @@ namespace MS.Web.Cookie
     /// <summary>
     /// Cookie工具
     /// </summary>
-    public static class CookieHelper
+    public class CookieHelper
     {
+        private IHttpContextAccessor _httpAccessor;
+        private ICookiePersist s_Mobile;
+        private ICookiePersist s_Web;
+
+        private  ICookieEncryption s_Normal;
+        private  ICookieEncryption s_Security;
+        private  ICookieEncryption s_HighSecurity;
+
+        public CookieHelper(IHttpContextAccessor httpContext)
+        {
+            _httpAccessor = httpContext;
+             s_Mobile = new MobileCookiePersister(this._httpAccessor);
+             s_Web = new WebCookiePersister(_httpAccessor);
+            s_Normal = new NormalCookie();
+            s_Security = new SecurityCookie();
+            s_HighSecurity = new HighSecurityCookie(httpContext);
+        }
+
         #region Private Member
 
-        private static void LoadConfig(string nodeName, out string persistType, out string securityLevel,
+        private  void LoadConfig(string nodeName, out string persistType, out string securityLevel,
             out Dictionary<string, string> parameters)
         {
-            var entity = CookieConfig.GetCookieConfig(nodeName);
+            var entity = IocManager.Instance.IocContainer.Resolve<CookieConfigManager>().GetCookieConfig(nodeName);
             parameters = entity.Properties;
             persistType = entity.PersistType;
             securityLevel = entity.SecurityLevel;
         }
 
-        private static ICookiePersist s_Mobile = new MobileCookiePersister();
-        private static ICookiePersist s_Web = new WebCookiePersister();
-        private static ICookiePersist CreatePersister(string persistType)
+        
+        private ICookiePersist CreatePersister(string persistType)
         {
             switch (persistType.ToUpper())
             {
@@ -39,10 +58,10 @@ namespace MS.Web.Cookie
             }
         }
 
-        private static ICookiePersist DiscernPersistType()
+        private ICookiePersist DiscernPersistType()
         {
-            if (HttpContext.Current.Request.Headers.AllKeys.Contains(MobileCookie.COOKIE_NAME)
-                || HttpContext.Current.Request.Browser.IsMobileDevice
+            var httpContext = IocManager.Instance.IocContainer.Resolve<IHttpContextAccessor>();
+            if (httpContext.HttpContext.Request.Headers.Keys.Contains(MobileCookie.COOKIE_NAME)
                 //mobile 所有的请求必须经过core里的方法进行调用,否则头信息不能回写
                 //|| (HttpContext.Current.Request.QueryString.AllKeys.Count()>0&&HttpContext.Current.Request.QueryString["type"].ToUpper()=="MOBILE")
                 )
@@ -50,10 +69,8 @@ namespace MS.Web.Cookie
             return s_Web;
         }
 
-        private static ICookieEncryption s_Normal = new NormalCookie();
-        private static ICookieEncryption s_Security = new SecurityCookie();
-        private static ICookieEncryption s_HighSecurity = new HighSecurityCookie();
-        private static ICookieEncryption CreateCookieHelper(string securityLevel)
+        
+        private ICookieEncryption CreateCookieHelper(string securityLevel)
         {
             switch (securityLevel.ToUpper())
             {
@@ -87,7 +104,7 @@ namespace MS.Web.Cookie
         /// <typeparam name="T">需要存放的Cookie值的类型</typeparam>
         /// <param name="nodeName">配置的Cookie节点名，若未配置，则使用此名作为cookie存储名且使用默认配置</param>
         /// <param name="obj">需要存放的Cookie值</param>
-        public static void SaveCookie<T>(string nodeName, T obj)
+        public void SaveCookie<T>(string nodeName, T obj)
         {
             string persistType;
             string securityLevel;
@@ -106,7 +123,7 @@ namespace MS.Web.Cookie
         /// <typeparam name="T">返回的类型</typeparam>
         /// <param name="nodeName">配置的Cookie节点名，若未配置，则使用此名作为cookie存储名且使用默认配置</param>
         /// <returns></returns>
-        public static T GetCookie<T>(string nodeName)
+        public  T GetCookie<T>(string nodeName)
         {
             string persistType;
             string securityLevel;
@@ -123,7 +140,7 @@ namespace MS.Web.Cookie
         /// 清除指定的Cookie
         /// </summary>
         /// <param name="nodeName">配置的Cookie节点名，若未配置，则使用此名作为cookie存储名且使用默认配置</param>
-        public static void RemoveCookie(string nodeName)
+        public void RemoveCookie(string nodeName)
         {
             string persistType;
             string securityLevel;

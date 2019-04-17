@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using MS.Dependency;
+using MS.Encryption;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,21 +16,28 @@ namespace MS.Web.Cookie
     /// </summary>
     internal class HighSecurityCookie : ICookieEncryption
     {
-        private static string GetClientIP()
+        private IHttpContextAccessor _httpAccessor;
+
+        public HighSecurityCookie(IHttpContextAccessor contextAccessor)
         {
-            if (HttpContext.Current == null || HttpContext.Current.Request == null)
+            _httpAccessor = contextAccessor;
+        }
+
+        private string GetClientIP()
+        {
+            if (_httpAccessor.HttpContext == null || _httpAccessor.HttpContext.Request == null)
             {
                 return string.Empty;
             }
-            string result = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            string result = _httpAccessor.HttpContext.Request.Headers["HTTP_X_FORWARDED_FOR"];
             if (null == result || result.Trim() == String.Empty)
             {
-                result = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                result = _httpAccessor.HttpContext.Request.Headers["REMOTE_ADDR"];
             }
 
             if (null == result || result.Trim() == String.Empty)
             {
-                result = HttpContext.Current.Request.UserHostAddress;
+                result = _httpAccessor.HttpContext.Request.Host.ToString();
             }
             if (null == result)
             {
@@ -47,10 +58,10 @@ namespace MS.Web.Cookie
             int securityExpires = 0;
             int.TryParse(parameters["securityExpires"], out securityExpires);
 
-            arrayCookieValue[0] = SerializeHelper.JsonSerialize(obj);
+            arrayCookieValue[0] = JsonConvert.SerializeObject(obj);
             arrayCookieValue[1] = DateTime.Now.AddMinutes(securityExpires).ToString();
             arrayCookieValue[2] = GetClientIP();
-            strCookieValue = SerializeHelper.JsonSerialize(arrayCookieValue);
+            strCookieValue = JsonConvert.SerializeObject(arrayCookieValue);
 
             strEncCookieValue = RC4Encrypt.Encrypt(strCookieValue, parameters["rc4key"], RC4Encrypt.EncoderMode.HexEncoder).Trim();
             strSHA1Sign = HashEncrypt.SHA1Encrypt(strEncCookieValue + parameters["hashkey"]);
@@ -88,14 +99,15 @@ namespace MS.Web.Cookie
                 if (strContent.Length == 0)
                     return result;
 
-                arrayCookieValue = SerializeHelper.JsonDeserialize<string[]>(strContent);
+                arrayCookieValue = JsonConvert.DeserializeObject<string[]>(strContent);
                 if (arrayCookieValue != null && arrayCookieValue.Length == 3)
                 {
                     if (DateTime.Parse(arrayCookieValue[1]) > DateTime.Now && GetClientIP() == arrayCookieValue[2])
                     {
-                        result = SerializeHelper.JsonDeserialize<T>(arrayCookieValue[0]);
+                        result = JsonConvert.DeserializeObject<T>(arrayCookieValue[0]);
                         //Cookie有效，则继续延续有效期
-                        CookieHelper.SaveCookie<T>(parameters["nodeName"], result);
+                        IocManager.Instance.IocContainer.Resolve<CookieHelper>().SaveCookie<T>(parameters["nodeName"], result);
+                        //CookieHelper.SaveCookie<T>(parameters["nodeName"], result);
                     }
                 }
 
