@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MS.AspNetCore.Mvc.Controllers;
 using MS.DataAccess;
 using MS.Dependency;
+using MS.Web.Cookie;
 
 namespace MSAspNetCoreDemo.Controllers
 {
@@ -37,6 +38,8 @@ namespace MSAspNetCoreDemo.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+
+            IocManager.Instance.Resolve<CookieHelper>().SaveCookie("cookieName", "123");
             //IDataCommand command = IocManager.Instance.Resolve<IDataCommand>();
             cmd.CreateCommand("GetAllChannelList");
             var list = cmd.ExecuteEntityList<Channel>();

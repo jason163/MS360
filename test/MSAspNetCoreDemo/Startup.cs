@@ -30,6 +30,11 @@ namespace MSAspNetCoreDemo
         {
             services.AddSingleton(Configuration);
 
+
+            //See https://github.com/aspnet/Mvc/issues/3936 to know why we added these services.
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());

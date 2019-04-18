@@ -5,6 +5,7 @@ using MS.AspNetCore.Configuration;
 using MS.Configuration.Startup;
 using MS.DataAccess;
 using MS.Module;
+using MS.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace MSAspNetCoreDemo
 {
     [DependsOn(
         typeof(MSDataAccessModule),
-        typeof(MSAspNetCoreModule)
+        typeof(MSAspNetCoreModule),
+        typeof(MSWebCommonModule)
         )]
     public class MSAspNetCoreDemoModule : MSModule
     {
