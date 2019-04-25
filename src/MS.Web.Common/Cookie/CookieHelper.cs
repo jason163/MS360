@@ -72,6 +72,7 @@ namespace MS.Web.Cookie
         
         private ICookieEncryption CreateCookieHelper(string securityLevel)
         {
+            //return IocManager.Instance.Resolve< ICookieEncryption>
             switch (securityLevel.ToUpper())
             {
                 case "LOW":

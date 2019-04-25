@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MS.Web.Common
+namespace MS360.Web.Entity
 {
     public class Class1
     {

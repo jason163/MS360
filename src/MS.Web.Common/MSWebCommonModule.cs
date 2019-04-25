@@ -14,10 +14,11 @@ namespace MS.Web
             IocManager.IocContainer.Register(Component.For<CookieHelper>().LifestyleSingleton());
             IocManager.IocContainer.Register(Component.For<CookieConfigManager>().LifestyleSingleton());
             //
-            //IocManager.IocContainer.Register(Component.For<ICookieEncryption>().Named("HighSecurity").ImplementedBy<HighSecurityCookie>());
-            //IocManager.IocContainer.Register(Component.For<ICookieEncryption>().Named("NormalSecurity").ImplementedBy<NormalCookie>());
-            //IocManager.IocContainer.Register(Component.For<ICookiePersist>().Named("MobilePersister").ImplementedBy<MobileCookiePersister>());
-            //IocManager.IocContainer.Register(Component.For<ICookiePersist>().Named("WebPersister").ImplementedBy<WebCookiePersister>());
+            IocManager.IocContainer.Register(Component.For<ICookieEncryption>().Named("HIGH").ImplementedBy<HighSecurityCookie>());
+            IocManager.IocContainer.Register(Component.For<ICookieEncryption>().Named("Middle").ImplementedBy<SecurityCookie>());
+            IocManager.IocContainer.Register(Component.For<ICookieEncryption>().Named("LOW").ImplementedBy<NormalCookie>());
+            IocManager.IocContainer.Register(Component.For<ICookiePersist>().Named("Mobile").ImplementedBy<MobileCookiePersister>());
+            IocManager.IocContainer.Register(Component.For<ICookiePersist>().Named("Web").ImplementedBy<WebCookiePersister>());
         }
 
         public override void Initialize()
