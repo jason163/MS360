@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace MS.DataAccess.EntityBasic
+namespace MS.Application.EntityBasic
 {
     /// <summary>
     /// 带有分页信息的查询结果Entity,所有带分页的查询Service返回类型都必须为此类型

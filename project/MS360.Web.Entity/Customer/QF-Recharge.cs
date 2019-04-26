@@ -1,4 +1,6 @@
-﻿using MS.BasicModel;
+﻿
+using MS.Application.EntityBasic;
+using MS.Enum;
 using MS360.Web.Enums;
 using System;
 
@@ -67,7 +69,7 @@ namespace MS360.Web.Entity
         /// <summary>
         /// 
         /// </summary>
-        //public String RechargeStatusStr { get { return EnumHelper.GetDescription(RechargeStatus); } }
+        public String RechargeStatusStr { get { return EnumHelper.GetDescription(RechargeStatus); } }
 
         /// <summary>
         /// 支付公司流水号
@@ -82,7 +84,7 @@ namespace MS360.Web.Entity
         /// <summary>
         /// 
         /// </summary>
-        //public String RechargeActionStr { get { return EnumHelper.GetDescription(RechargeAction); } }
+        public String RechargeActionStr { get { return EnumHelper.GetDescription(RechargeAction); } }
 
 
         /// <summary>
@@ -168,7 +170,7 @@ namespace MS360.Web.Entity
         /// <summary>
         /// 描述
         /// </summary>
-        //public string NursingDiaryStatusStr { get { return EnumHelper.GetDescription(NursingDiaryStatus); } }
+        public string NursingDiaryStatusStr { get { return EnumHelper.GetDescription(NursingDiaryStatus); } }
 
         /// <summary>
         /// 本次消费次数
@@ -283,7 +285,7 @@ namespace MS360.Web.Entity
         /// <summary>
         /// 描述
         /// </summary>
-        //public string ReservationStatusStr { get { return EnumHelper.GetDescription(ReservationStatus); } }
+        public string ReservationStatusStr { get { return EnumHelper.GetDescription(ReservationStatus); } }
 
         /// <summary>
         /// 编号

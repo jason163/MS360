@@ -1,5 +1,5 @@
 ﻿
-using MS.BasicModel;
+using MS.Application.EntityBasic;
 
 namespace MS360.Web.Entity
 {

@@ -603,7 +603,7 @@ namespace MS.DataMapper
                 {
                     return null;
                 }
-                return Enum.Parse(type, value.ToString());
+                return System.Enum.Parse(type, value.ToString());
                  
             }
             return value;

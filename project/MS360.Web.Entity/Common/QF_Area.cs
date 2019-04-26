@@ -1,4 +1,5 @@
-﻿using MS.BasicModel;
+﻿using MS.Application.EntityBasic;
+using MS.Enum;
 using MS360.Web.Enums;
 using System;
 using System.Collections.Generic;
@@ -132,10 +133,10 @@ namespace MS360.Web.Entity
         /// <summary>
         /// 
         /// </summary>
-        //public string StatusStr
-        //{
-        //    get { return EnumHelper.GetDescription(Status); }
-        //}
+        public string StatusStr
+        {
+            get { return EnumHelper.GetDescription(Status); }
+        }
     }
     /// <summary>
     /// 

@@ -8,9 +8,9 @@ using System.Reflection;
 using System.Collections;
 using MS.DataAccess.Configuration;
 using MS.DataAccess.DbProvider;
-using MS.DataAccess.EntityBasic;
 using MS.FastInvoke;
 using MS.DataMapper;
+using MS.Application.EntityBasic;
 
 namespace MS.DataAccess
 {

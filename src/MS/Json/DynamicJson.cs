@@ -64,7 +64,7 @@ namespace MS.Json
 
         private static dynamic ToValue(XElement element)
         {
-            var type = (JsonType)Enum.Parse(typeof(JsonType), element.Attribute("type").Value);
+            var type = (JsonType)System.Enum.Parse(typeof(JsonType), element.Attribute("type").Value);
             switch (type)
             {
                 case JsonType.boolean:

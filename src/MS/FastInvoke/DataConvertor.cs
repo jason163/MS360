@@ -113,7 +113,7 @@ namespace MS.FastInvoke
                     {
                         destinationType = typeof(T);
                     }
-                    return (T)Enum.Parse(destinationType, data.ToString(), false);
+                    return (T)System.Enum.Parse(destinationType, data.ToString(), false);
                 }
                 else
                 {
@@ -247,7 +247,7 @@ namespace MS.FastInvoke
                     {
                         realType = destinationType;
                     }
-                    return Enum.Parse(realType, data.ToString(), true);
+                    return System.Enum.Parse(realType, data.ToString(), true);
                 }
                 return data;
             }

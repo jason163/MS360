@@ -1,4 +1,4 @@
-﻿using MS.DataAccess.EntityBasic;
+﻿using MS.Application.EntityBasic;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +8,8 @@ namespace MS.DataAccess
 {
     public interface IDataCommand
     {
+        string CommandText { get; set; }
+
         DataCommand CreateCommand(string sqlKey);
         void SetParameter(string paramName, DbType dbType, object value);
         void SetParameter(string paramName, DbType dbType, object value, int size);

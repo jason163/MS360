@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.Web.Entity", "project
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.Web.Enums", "project\MS360.Web.Enums\MS360.Web.Enums.csproj", "{D80F25DC-19BC-4ED3-AEC8-0A53682C6756}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS360.Web.DataAccess", "project\MS360.Web.DataAccess\MS360.Web.DataAccess.csproj", "{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{D80F25DC-19BC-4ED3-AEC8-0A53682C6756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D80F25DC-19BC-4ED3-AEC8-0A53682C6756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D80F25DC-19BC-4ED3-AEC8-0A53682C6756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +130,7 @@ Global
 		{519E94C9-7473-4A9B-B50A-0152EDA161D5} = {85397689-988F-457F-BF8E-33972E554112}
 		{E559DC04-B9BA-4A24-B546-4FF118EDD3D7} = {2413DE8E-EB4E-4834-86D7-0E26C999460B}
 		{D80F25DC-19BC-4ED3-AEC8-0A53682C6756} = {2413DE8E-EB4E-4834-86D7-0E26C999460B}
+		{9E5A0C64-01BE-4DFE-B8C4-A2CDAAFBE373} = {2413DE8E-EB4E-4834-86D7-0E26C999460B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {856DA000-E9EF-422E-A4B5-F32CB67142D1}
